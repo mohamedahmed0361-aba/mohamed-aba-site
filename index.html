@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>محمد | ABA Therapist</title>
+<title>Mohamed Ghareib | ABA Therapist</title>
 
 <style>
 body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
-  background: #f5f7fa;
+  background: linear-gradient(135deg,#dff6f9,#e8fff5);
   color: #333;
 }
 
@@ -50,6 +50,8 @@ section {
 
 .whatsapp { background: #25D366; }
 .facebook { background: #1877F2; }
+.instagram { background: #E1306C; }
+.email { background: #6c757d; }
 .booking { background: linear-gradient(45deg,#00c9a7,#00b4d8); }
 
 input, textarea {
@@ -66,25 +68,66 @@ input, textarea {
 
 <header>
 <img src="https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg">
-<h1>محمد أحمد غريب</h1>
-<p>ABA Therapist | أخصائي اضطراب طيف التوحد</p>
+<h1>Mohamed Ahmed Ghareib</h1>
+<p>
+ASD Specialist | ABAT | IBT <br>
+B.Sc in Disability & Rehabilitation - Autism تخصص
+</p>
 </header>
 
 <section>
 
 <div class="card">
+<h2>💼 الخبرات</h2>
+<p>
+العمل في مراكز تحليل السلوك التطبيقي (ABA)<br>
+تقديم جلسات علاجية للأطفال باستخدام ABA<br>
+إعداد وتنفيذ خطط تعديل السلوك<br>
+العمل ضمن فريق متعدد التخصصات
+</p>
+</div>
+
+<div class="card">
+<h2>🎓 المؤهل</h2>
+<p>
+بكالوريوس علوم الإعاقة والتأهيل<br>
+تخصص: اضطراب طيف التوحد<br>
+جامعة الزقازيق<br>
+تقدير: جيد جدًا مرتفع
+</p>
+</div>
+
+<div class="card">
+<h2>📜 الكورسات</h2>
+<p>
+ABAT - QABA<br>
+IBT - IBAO<br>
+VB-MAPP<br>
+ABLLS<br>
+PECS<br>
+DSM-5<br>
+GARS-3<br>
+تدخل مبكر
+</p>
+</div>
+
+<div class="card">
 <h2>📞 تواصل</h2>
 
 <a class="btn whatsapp" href="https://wa.me/201098961264" target="_blank">
-واتساب مصر
+💬 واتساب
 </a>
 
-<a class="btn whatsapp" href="https://wa.me/96871599794" target="_blank">
-واتساب عمان
+<a class="btn facebook" href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr" target="_blank">
+📘 فيسبوك
 </a>
 
-<a class="btn facebook" href="https://facebook.com/YOUR_FACEBOOK" target="_blank">
-فيسبوك
+<a class="btn instagram" href="https://www.instagram.com/mohamed_ghareib6?igsh=Z3dmM2EwMTIyNTls&utm_source=qr" target="_blank">
+📸 إنستجرام
+</a>
+
+<a class="btn email" href="mailto:Mohamedahmed0361@gmail.com">
+📧 Email
 </a>
 
 </div>
@@ -96,7 +139,7 @@ input, textarea {
 <input type="text" placeholder="رقمك">
 <textarea placeholder="تفاصيل"></textarea>
 
-<button class="btn booking" onclick="smartBooking()">
+<button class="btn booking" onclick="sendWhatsApp()">
 احجز الآن 🚀
 </button>
 
@@ -105,7 +148,7 @@ input, textarea {
 </section>
 
 <script>
-function smartBooking() {
+function sendWhatsApp() {
   var name = document.querySelector('input[placeholder="اسمك"]').value;
   var phone = document.querySelector('input[placeholder="رقمك"]').value;
   var details = document.querySelector('textarea').value;
@@ -115,19 +158,13 @@ function smartBooking() {
     return;
   }
 
-  var message = "مرحبا 👋\n"
-              + "أريد حجز جلسة ABA\n\n"
-              + "👤 الاسم: " + name + "\n"
-              + "📱 الرقم: " + phone + "\n"
-              + "📝 التفاصيل: " + details;
+  var message = "Hello 👋\n"
+              + "I want to book an ABA session\n\n"
+              + "Name: " + name + "\n"
+              + "Phone: " + phone + "\n"
+              + "Details: " + details;
 
-  var url = "";
-
-  if (phone.startsWith("01")) {
-    url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
-  } else {
-    url = "https://wa.me/96871599794?text=" + encodeURIComponent(message);
-  }
+  var url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
 
   window.open(url, '_blank');
 }

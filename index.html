@@ -97,7 +97,7 @@ input, textarea {
 <input type="text" placeholder="اسمك" required>
 <input type="text" placeholder="رقمك" required>
 <textarea placeholder="تفاصيل"></textarea>
-<<button type="button" class="btn booking" onclick="smartBooking()">احجز الآن 🚀</button>
+<button type="button" class="btn booking" onclick="smartBooking()">احجز الآن 🚀</button>
 </form>
 <p id="msg"></p>
 </div>
@@ -109,7 +109,58 @@ function book(e){
 e.preventDefault();
 document.getElementById("msg").innerText="تم إرسال الطلب ✅";
 }
+<script>
+function smartBooking() {
+  var name = document.querySelector('input[placeholder="اسمك"]').value;
+  var phone = document.querySelector('input[placeholder="رقمك"]').value;
+  var details = document.querySelector('textarea').value;
+
+  if (name === "" || phone === "") {
+    alert("من فضلك اكتب اسمك ورقمك");
+    return;
+  }
+
+  var message = "مرحبا 👋\n"
+              + "أريد حجز جلسة ABA\n\n"
+              + "👤 الاسم: " + name + "\n"
+              + "📱 الرقم: " + phone + "\n"
+              + "📝 التفاصيل: " + details;
+
+  var url = "";
+
+  if (phone.startsWith("01")) {
+    url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
+  } else {
+    url = "https://wa.me/96871599794?text=" + encodeURIComponent(message);
+  }
+
+  window.open(url, '_blank');
+}
 </script>
+</body>
+</html>
+
+  if (name === "" || phone === "") {
+    alert("من فضلك اكتب اسمك ورقمك");
+    return;
+  }
+
+  var message = "مرحبا 👋\n"
+              + "أريد حجز جلسة ABA\n\n"
+              + "👤 الاسم: " + name + "\n"
+              + "📱 الرقم: " + phone + "\n"
+              + "📝 التفاصيل: " + details;
+
+  var url = "";
+
+  if (phone.startsWith("01")) {
+    url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
+  } else {
+    url = "https://wa.me/96871599794?text=" + encodeURIComponent(message);
+  }
+
+  window.open(url, '_blank');
+}</script>
 
 </body>
 </html>

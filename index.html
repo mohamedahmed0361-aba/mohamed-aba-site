@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمد | ABA Therapist</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+}
+
+header img {
+    width: 180px;
+    border-radius: 50%;
+    border: 4px solid #00c9a7;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    color: white;
+}
+
+.whatsapp { background: #25D366; }
+.instagram { background: #E1306C; }
+.booking { background: #00c9a7; }
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="https://i.imgur.com/your-image.jpg">
+<h1>محمد أحمد</h1>
+<p>ABA Therapist | أخصائي تعديل سلوك</p>
+</header>
+
+<section>
+
+<div class="card">
+<h2>👤 نبذة عني</h2>
+<p>معالج ABA متخصص في أطفال التوحد وتطوير مهارات التواصل.</p>
+</div>
+
+<div class="card">
+<h2>📞 تواصل</h2>
+<a class="btn whatsapp" href="https://wa.me/96871599794" target="_blank">واتساب</a>
+<a class="btn instagram" href="https://www.instagram.com/mohamed_ghareib6" target="_blank">إنستجرام</a>
+</div>
+
+<div class="card">
+<h2>📅 احجز جلسة</h2>
+<form onsubmit="book(event)">
+<input type="text" placeholder="اسمك" required>
+<input type="text" placeholder="رقمك" required>
+<textarea placeholder="تفاصيل"></textarea>
+<button class="btn booking">احجز</button>
+</form>
+<p id="msg"></p>
+</div>
+
+</section>
+
+<script>
+function book(e){
+e.preventDefault();
+document.getElementById("msg").innerText="تم إرسال الطلب ✅";
+}
+</script>
+
+</body>
+</html>

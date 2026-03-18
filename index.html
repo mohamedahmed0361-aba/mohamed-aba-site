@@ -3,60 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mohamed Ghareib</title>
 
 <style>
 body {
   margin:0;
   font-family: Arial;
-  background: #f0fdfa;
+  background:#f0fdfa;
 }
 
 /* HERO */
 .hero {
-  background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") center/cover;
-  height: 100vh;
-  position: relative;
-  color: white;
-  text-align: center;
+  min-height:100vh;
+  background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") center 25%/cover no-repeat;
+  position:relative;
+  color:white;
 }
 
 .overlay {
-  background: rgba(0,0,0,0.5);
-  height: 100%;
-  padding-top: 100px;
+  background:rgba(0,0,0,0.6);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:40px;
+  text-align:right;
 }
 
-.hero h1 {
-  font-size: 35px;
+/* TEXT SIDE */
+.hero-text {
+  max-width:500px;
 }
 
-.hero h2 {
-  font-size: 50px;
-  margin: 10px 0;
+.hero-text h1 {
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.hero-text h2 {
+  font-size:42px;
+  margin:10px 0;
+  line-height:1.2;
+}
+
+.hero-text p {
+  font-size:18px;
+  margin-bottom:20px;
 }
 
 .hero-btn {
   background:#00c9a7;
-  padding:15px 30px;
+  padding:15px 25px;
   border-radius:10px;
-  color:white;
   text-decoration:none;
+  color:white;
   display:inline-block;
-  margin-top:20px;
-}
-
-/* PROFILE IMG */
-.profile {
-  margin-top:-70px;
-  text-align:center;
-}
-
-.profile img {
-  width:140px;
-  border-radius:50%;
-  border:5px solid white;
 }
 
 /* CARDS */
@@ -77,11 +78,11 @@ body {
 /* BUTTONS */
 .btn {
   padding:10px 15px;
-  border-radius:10px;
   margin:5px;
-  display:inline-block;
-  text-decoration:none;
+  border-radius:10px;
   color:white;
+  text-decoration:none;
+  display:inline-block;
 }
 
 .whatsapp { background:#25D366; }
@@ -111,7 +112,7 @@ input, textarea {
   100%{transform:scale(1);}
 }
 
-/* FLOAT BTN */
+/* FLOAT */
 .floating-btn {
   position:fixed;
   bottom:20px;
@@ -133,32 +134,40 @@ input, textarea {
 <div class="hero">
   <div class="overlay">
 
-    <h1>جلسات متخصصة لتطوير مهارات الأطفال</h1>
+    <div class="hero-text">
 
-    <h2>Mohamed Ahmed Ghareib</h2>
+      <h1>جلسات متخصصة لتطوير مهارات الأطفال</h1>
 
-    <p>ASD Specialist | ABAT | IBT</p>
+      <h2>Mohamed Ahmed<br>Ghareib</h2>
 
-    <a href="#booking" class="hero-btn">احجز الآن 🚀</a>
+      <p>ASD Specialist | ABAT | IBT</p>
+
+      <a href="#booking" class="hero-btn">احجز الآن 🚀</a>
+
+    </div>
 
   </div>
 </div>
 
-<!-- PROFILE -->
-<div class="profile">
-<img src="https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg">
-</div>
-
 <!-- PROBLEMS -->
 <div class="card">
-<h2>❓ هل طفلك يعاني من:</h2>
+<h2 style="color:#e74c3c;">❓ هل طفلك يعاني من:</h2>
+
 <p>
-عدم الكلام 👶<br>
-فرط حركة ⚡<br>
-مشاكل سلوكية 😡<br>
-صعوبة في التواصل 🧠
+🧠 صعوبة في التواصل<br>
+🗣️ صعوبة في التعبير عن احتياجاته<br>
+👉 لا يستطيع طلب ما يريده<br>
+⚡ فرط حركة وعدم تركيز<br>
+⏳ لا يستطيع الانتظار أو أخذ الدور<br>
+😡 مشاكل سلوكية (عصبية / رفض الأوامر)<br>
+📚 صعوبة في الإدراك والفهم<br>
+🔤 صعوبة في اللغة (الاستقبالية أو التعبيرية)<br>
+🏷️ صعوبة في التسمية والتعرف على الأشياء
 </p>
-<p style="color:#00b894;">الحل يبدأ بجلسة تقييم</p>
+
+<p style="color:#00b894; font-weight:bold;">
+📌 الحل يبدأ بجلسة تقييم مبكرة
+</p>
 </div>
 
 <!-- WHY -->
@@ -188,8 +197,8 @@ input, textarea {
 <h2>💼 الخبرات</h2>
 <p>
 العمل في مراكز ABA<br>
-إعداد وتنفيذ BIP<br>
-إعداد IEP<br>
+إعداد وتنفيذ خطط التدخل السلوكي (BIP)<br>
+إعداد خطط تدخل فردية (IEP)<br>
 العمل ضمن فريق متخصص
 </p>
 </div>

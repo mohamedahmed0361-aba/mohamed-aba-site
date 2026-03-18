@@ -3,41 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mohamed Ghareib</title>
 
 <style>
 body {
   margin:0;
   font-family: Arial;
-  background: linear-gradient(135deg,#dff6f9,#e8fff5);
+  background: #f0fdfa;
 }
 
-/* HEADER */
-header {
-  text-align:center;
-  padding:40px;
+/* HERO */
+.hero {
+  background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") center/cover;
+  height: 100vh;
+  position: relative;
+  color: white;
+  text-align: center;
 }
 
-header img {
-  width:150px;
-  border-radius:50%;
-  border:4px solid #00c9a7;
-  box-shadow:0 0 25px #00c9a7;
+.overlay {
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  padding-top: 100px;
 }
 
-h1 { margin:10px 0; }
+.hero h1 {
+  font-size: 35px;
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin: 10px 0;
+}
 
 .hero-btn {
   background:#00c9a7;
-  color:white;
-  padding:12px 25px;
+  padding:15px 30px;
   border-radius:10px;
-  display:inline-block;
-  margin-top:15px;
+  color:white;
   text-decoration:none;
+  display:inline-block;
+  margin-top:20px;
 }
 
-/* CARD */
+/* PROFILE IMG */
+.profile {
+  margin-top:-70px;
+  text-align:center;
+}
+
+.profile img {
+  width:140px;
+  border-radius:50%;
+  border:5px solid white;
+}
+
+/* CARDS */
 .card {
   background:white;
   margin:20px auto;
@@ -55,17 +77,18 @@ h1 { margin:10px 0; }
 /* BUTTONS */
 .btn {
   padding:10px 15px;
-  margin:5px;
   border-radius:10px;
-  color:white;
-  text-decoration:none;
+  margin:5px;
   display:inline-block;
+  text-decoration:none;
+  color:white;
 }
 
 .whatsapp { background:#25D366; }
 .facebook { background:#1877F2; }
 .instagram { background:#E1306C; }
 .email { background:#6c757d; }
+.call { background:#ff7675; }
 
 /* FORM */
 input, textarea {
@@ -88,7 +111,7 @@ input, textarea {
   100%{transform:scale(1);}
 }
 
-/* FLOATING BTN */
+/* FLOAT BTN */
 .floating-btn {
   position:fixed;
   bottom:20px;
@@ -99,25 +122,46 @@ input, textarea {
   border-radius:50%;
   font-size:20px;
   text-decoration:none;
+  animation:pulse 1.5s infinite;
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<!-- HERO -->
+<div class="hero">
+  <div class="overlay">
+
+    <h1>جلسات متخصصة لتطوير مهارات الأطفال</h1>
+
+    <h2>Mohamed Ahmed Ghareib</h2>
+
+    <p>ASD Specialist | ABAT | IBT</p>
+
+    <a href="#booking" class="hero-btn">احجز الآن 🚀</a>
+
+  </div>
+</div>
+
+<!-- PROFILE -->
+<div class="profile">
 <img src="https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg">
+</div>
 
-<h1>Mohamed Ahmed Ghareib</h1>
-<p>ASD Specialist | ABAT | IBT</p>
-<p>B.Sc in Disability & Rehabilitation - Autism Major</p>
+<!-- PROBLEMS -->
+<div class="card">
+<h2>❓ هل طفلك يعاني من:</h2>
+<p>
+عدم الكلام 👶<br>
+فرط حركة ⚡<br>
+مشاكل سلوكية 😡<br>
+صعوبة في التواصل 🧠
+</p>
+<p style="color:#00b894;">الحل يبدأ بجلسة تقييم</p>
+</div>
 
-<h3 style="color:#00b894;">احجز جلسة تقييم لطفلك الآن</h3>
-
-<a href="#booking" class="hero-btn">احجز الآن 🚀</a>
-</header>
-
-<!-- WHY ME -->
+<!-- WHY -->
 <div class="card">
 <h2>⭐ ليه تختارني؟</h2>
 <p>
@@ -128,26 +172,25 @@ input, textarea {
 </p>
 </div>
 
+<!-- RESULTS -->
+<div class="card">
+<h2>📈 النتائج</h2>
+<p>
+✔ تحسين التواصل<br>
+✔ تقليل السلوكيات المشكلة<br>
+✔ زيادة التركيز<br>
+✔ تطوير المهارات الاجتماعية
+</p>
+</div>
+
 <!-- EXPERIENCE -->
 <div class="card">
 <h2>💼 الخبرات</h2>
 <p>
 العمل في مراكز ABA<br>
-تقديم جلسات علاجية للأطفال<br>
-إعداد وتنفيذ خطط التدخل السلوكي (BIP)<br>
-إعداد خطط فردية (IEP)<br>
+إعداد وتنفيذ BIP<br>
+إعداد IEP<br>
 العمل ضمن فريق متخصص
-</p>
-</div>
-
-<!-- CERT -->
-<div class="card">
-<h2>🎓 المؤهل</h2>
-<p>
-بكالوريوس علوم الإعاقة والتأهيل<br>
-تخصص اضطراب طيف التوحد<br>
-جامعة الزقازيق<br>
-تقدير: جيد جدًا مرتفع
 </p>
 </div>
 
@@ -163,21 +206,21 @@ GARS-3
 </p>
 </div>
 
-<!-- REVIEWS -->
-<div class="card">
-<h2>⭐ آراء أولياء الأمور</h2>
-<p>“تحسن كبير في سلوك ابني خلال فترة قصيرة 🙏”</p>
-<p>“الدكتور ساعدنا جدًا في التواصل مع الطفل”</p>
+<!-- URGENCY -->
+<div class="card" style="border:2px solid red;">
+<h3>⚠️ عدد الأماكن محدود</h3>
+<p>احجز الآن قبل اكتمال العدد</p>
 </div>
 
 <!-- CONTACT -->
 <div class="card">
 <h2>📞 تواصل</h2>
 
-<a class="btn whatsapp" href="https://wa.me/201098961264">واتساب</a>
+<a class="btn whatsapp" href="https://wa.me/201098961264?text=مرحبا%20اريد%20حجز%20جلسة%20ABA">واتساب</a>
 <a class="btn facebook" href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">فيسبوك</a>
 <a class="btn instagram" href="https://www.instagram.com/mohamed_ghareib6">إنستجرام</a>
 <a class="btn email" href="mailto:Mohamedahmed0361@gmail.com">Email</a>
+<a class="btn call" href="tel:+201098961264">اتصل الآن</a>
 
 </div>
 
@@ -193,26 +236,28 @@ GARS-3
 
 </div>
 
-<!-- FLOAT BTN -->
+<!-- FLOAT -->
 <a href="https://wa.me/201098961264" class="floating-btn">💬</a>
 
 <script>
 function sendWhatsApp(){
-  var name=document.querySelector('input').value;
-  var phone=document.querySelectorAll('input')[1].value;
-  var details=document.querySelector('textarea').value;
+var name=document.querySelector('input').value;
+var phone=document.querySelectorAll('input')[1].value;
+var details=document.querySelector('textarea').value;
 
-  if(name==""||phone==""){
-    alert("من فضلك اكتب اسمك ورقمك");
-    return;
-  }
+if(name==""||phone==""){
+alert("من فضلك اكتب اسمك ورقمك");
+return;
+}
 
-  var msg="Hello 👋\nI want to book session\n\n"
-  +"Name: "+name+"\nPhone: "+phone+"\nDetails: "+details;
+var msg="مرحبا اريد حجز جلسة\n\n"
++"الاسم: "+name+"\n"
++"الرقم: "+phone+"\n"
++"التفاصيل: "+details;
 
-  var url="https://wa.me/201098961264?text="+encodeURIComponent(msg);
+var url="https://wa.me/201098961264?text="+encodeURIComponent(msg);
 
-  window.open(url,'_blank');
+window.open(url,'_blank');
 }
 </script>
 

@@ -7,65 +7,74 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Cairo', sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55);
-    color: white;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #f5f7fa;
+  color: #333;
+  animation: fadeIn 1.5s ease;
 }
-  
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
 }
-    text-align: center;
-    padding: 50px;
+
+header {
+  text-align: center;
+  padding: 40px;
 }
 
 header img {
-  width: 180px;
+  width: 170px;
   border-radius: 50%;
   border: 4px solid #00c9a7;
   animation: glow 2s infinite alternate;
 }
 
 @keyframes glow {
-  from {
-    box-shadow: 0 0 10px #00c9a7;
-  }
-  to {
-    box-shadow: 0 0 25px #00c9a7;
-  }
+  from { box-shadow: 0 0 10px #00c9a7; }
+  to { box-shadow: 0 0 25px #00c9a7; }
 }
 
 section {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
 .card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 15px;
-    margin: 15px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
 }
 
 .btn {
-    padding: 12px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
-    color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  color: white;
+  font-size: 15px;
 }
 
 .whatsapp { background: #25D366; }
 .instagram { background: #E1306C; }
-.booking { background: #00c9a7; }
+.booking { background: linear-gradient(45deg,#00c9a7,#00b4d8); }
 
 input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: none;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 </style>
 </head>
@@ -74,41 +83,37 @@ input, textarea {
 
 <header>
 <img src="https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg">
-<h1>محمد احمد غريب</h1>
-<p>ABA Therapist | أخصائي  اضطراب طيف التوحد</p>
+<h1>محمد أحمد غريب</h1>
+<p>ABA Therapist | أخصائي اضطراب طيف التوحد</p>
 </header>
 
 <section>
 
 <div class="card">
 <h2>👤 نبذة عني</h2>
-<p>معالج ABA متخصص في أطفال التوحد وتطوير مهارات التواصل.</p>
+<p>معالج تحليل سلوك تطبيقي (ABA) متخصص في أطفال التوحد وتطوير مهارات التواصل.</p>
 </div>
 
 <div class="card">
 <h2>📞 تواصل</h2>
-<a class="btn whatsapp" href="https://wa.me/96871599794" target="_blank">واتساب</a>
-<a class="btn instagram" href="https://www.instagram.com/mohamed_ghareib6" target="_blank">إنستجرام</a>
+<a class="btn whatsapp" href="https://wa.me/201098961264">واتساب مصر</a>
+<a class="btn whatsapp" href="https://wa.me/96871599794">واتساب عمان</a>
+<a class="btn instagram" href="#">إنستجرام</a>
 </div>
 
 <div class="card">
 <h2>📅 احجز جلسة</h2>
-<form onsubmit="book(event)">
-<input type="text" placeholder="اسمك" required>
-<input type="text" placeholder="رقمك" required>
+
+<input type="text" placeholder="اسمك">
+<input type="text" placeholder="رقمك">
 <textarea placeholder="تفاصيل"></textarea>
-<button type="button" class="btn booking" onclick="smartBooking()">احجز الآن 🚀</button>
-</form>
-<p id="msg"></p>
+
+<button class="btn booking" onclick="smartBooking()">احجز الآن 🚀</button>
+
 </div>
 
 </section>
 
-<script>
-function book(e){
-e.preventDefault();
-document.getElementById("msg").innerText="تم إرسال الطلب ✅";
-}
 <script>
 function smartBooking() {
   var name = document.querySelector('input[placeholder="اسمك"]').value;
@@ -137,30 +142,6 @@ function smartBooking() {
   window.open(url, '_blank');
 }
 </script>
-</body>
-</html>
-
-  if (name === "" || phone === "") {
-    alert("من فضلك اكتب اسمك ورقمك");
-    return;
-  }
-
-  var message = "مرحبا 👋\n"
-              + "أريد حجز جلسة ABA\n\n"
-              + "👤 الاسم: " + name + "\n"
-              + "📱 الرقم: " + phone + "\n"
-              + "📝 التفاصيل: " + details;
-
-  var url = "";
-
-  if (phone.startsWith("01")) {
-    url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
-  } else {
-    url = "https://wa.me/96871599794?text=" + encodeURIComponent(message);
-  }
-
-  window.open(url, '_blank');
-}</script>
 
 </body>
 </html>

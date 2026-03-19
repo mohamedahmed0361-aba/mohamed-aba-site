@@ -1,273 +1,211 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed Ghareib</title>
+<title>Mohamed Ahmed Ghareib</title>
 
 <style>
+
+/* الشكل العام */
 body {
-  margin:0;
+  margin: 0;
   font-family: Arial;
-  background:#f0fdfa;
+  background: #e8f5f2;
 }
 
-/* HERO */
+/* ===== HERO ===== */
 .hero {
-  min-height:100vh;
-  background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") center 25%/cover no-repeat;
-  position:relative;
-  color:white;
+  height: 100vh;
+  background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") no-repeat center top;
+  background-size: cover;
+  position: relative;
 }
 
-.overlay {
-  background:rgba(0,0,0,0.6);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  padding:40px;
-  text-align:right;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
 }
 
-/* TEXT SIDE */
+/* محتوى الهيرو */
+.hero-content {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 320px;
+  text-align: right;
+}
+
+/* الجملة */
 .hero-text {
-  max-width:500px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  animation: fadeDown 1.5s ease;
 }
 
-.hero-text h1 {
-  font-size:28px;
-  margin-bottom:10px;
+/* الاسم */
+.hero-content h1 {
+  font-size: 32px;
+  margin: 10px 0;
 }
 
-.hero-text h2 {
-  font-size:42px;
-  margin:10px 0;
-  line-height:1.2;
+/* التخصص */
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.hero-text p {
-  font-size:18px;
-  margin-bottom:20px;
-}
-
+/* زر */
 .hero-btn {
-  background:#00c9a7;
-  padding:15px 25px;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-  display:inline-block;
+  background: #00b894;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
 }
 
-/* CARDS */
+/* انيميشن */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARDS ===== */
 .card {
-  background:white;
-  margin:20px auto;
-  padding:20px;
-  max-width:800px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  transition:0.3s;
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: right;
 }
 
-.card:hover {
-  transform:scale(1.03);
+/* انيميشن الكروت */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
 }
 
-/* BUTTONS */
-.btn {
-  padding:10px 15px;
-  margin:5px;
-  border-radius:10px;
-  color:white;
-  text-decoration:none;
-  display:inline-block;
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.whatsapp { background:#25D366; }
-.facebook { background:#1877F2; }
-.instagram { background:#E1306C; }
-.email { background:#6c757d; }
-.call { background:#ff7675; }
-
-/* FORM */
-input, textarea {
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-  border-radius:8px;
-  border:1px solid #ddd;
+/* زر واتساب */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25d366;
+  color: white;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 
-/* BOOK BTN */
-.booking {
-  background:#00c9a7;
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%{transform:scale(1);}
-  50%{transform:scale(1.05);}
-  100%{transform:scale(1);}
-}
-
-/* FLOAT */
-.floating-btn {
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  font-size:20px;
-  text-decoration:none;
-  animation:pulse 1.5s infinite;
-}
 </style>
 </head>
 
 <body>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="overlay">
+<section class="hero">
+  <div class="hero-content">
 
     <div class="hero-text">
-
-      <h1>جلسات متخصصة لتطوير مهارات الأطفال</h1>
-
-      <h2>Mohamed Ahmed<br>Ghareib</h2>
-
-      <p>ASD Specialist | ABAT | IBT</p>
-
-      <a href="#booking" class="hero-btn">احجز الآن 🚀</a>
-
+      هل طفلك يعاني من صعوبة في التواصل أو السلوك؟ 🤔
     </div>
 
+    <h1>Mohamed Ahmed Ghareib</h1>
+    <p>ASD Specialist | ABAT | IBT</p>
+
+    <button class="hero-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+      🚀 احجز الآن
+    </button>
+
   </div>
-</div>
+</section>
 
-<!-- PROBLEMS -->
-<div class="card">
-<h2 style="color:#e74c3c;">❓ هل طفلك يعاني من:</h2>
-
-<p>
-🧠 صعوبة في التواصل<br>
-🗣️ صعوبة في التعبير عن احتياجاته<br>
-👉 لا يستطيع طلب ما يريده<br>
-⚡ فرط حركة وعدم تركيز<br>
-⏳ لا يستطيع الانتظار أو أخذ الدور<br>
-😡 مشاكل سلوكية (عصبية / رفض الأوامر)<br>
-📚 صعوبة في الإدراك والفهم<br>
-🔤 صعوبة في اللغة (الاستقبالية أو التعبيرية)<br>
-🏷️ صعوبة في التسمية والتعرف على الأشياء
-</p>
-
-<p style="color:#00b894; font-weight:bold;">
-📌 الحل يبدأ بجلسة تقييم مبكرة
-</p>
-</div>
-
-<!-- WHY -->
-<div class="card">
+<!-- ليه تختارني -->
+<div class="card fade-up">
 <h2>⭐ ليه تختارني؟</h2>
-<p>
-🎯 خبرة في ABA<br>
-🧠 تحليل سلوك علمي<br>
-📊 خطط فردية لكل طفل<br>
-👨‍👩‍👧 متابعة مستمرة
-</p>
+
+<ul style="list-style:none; padding:0;">
+<li>🎯 خبرة في تحليل السلوك التطبيقي (ABA)</li>
+<li>🧠 تحليل سلوك علمي دقيق</li>
+<li>📊 إعداد خطط فردية مناسبة (IEP)</li>
+<li>⚡ إعداد خطط تدخل سلوكي (BIP)</li>
+<li>👨‍👩‍👧 متابعة مستمرة مع الأسرة</li>
+</ul>
 </div>
 
-<!-- RESULTS -->
-<div class="card">
+<!-- النتائج -->
+<div class="card fade-up">
 <h2>📈 النتائج</h2>
+
 <p>
 ✔ تحسين التواصل<br>
 ✔ تقليل السلوكيات المشكلة<br>
 ✔ زيادة التركيز<br>
 ✔ تطوير المهارات الاجتماعية
 </p>
-</div>
-
-<!-- EXPERIENCE -->
-<div class="card">
-<h2>💼 الخبرات</h2>
-<p>
-العمل في مراكز ABA<br>
-إعداد وتنفيذ خطط التدخل السلوكي (BIP)<br>
-إعداد خطط تدخل فردية (IEP)<br>
-العمل ضمن فريق متخصص
-</p>
-</div>
-
-<!-- COURSES -->
-<div class="card">
-<h2>📜 الكورسات</h2>
-<p>
-ABAT - QABA<br>
-IBT - IBAO<br>
-ABLLS-R<br>
-Picture Exchange Communication System (PECS)<br>
-GARS-3
-</p>
-</div>
-
-<!-- URGENCY -->
-<div class="card" style="border:2px solid red;">
-<h3>⚠️ عدد الأماكن محدود</h3>
-<p>احجز الآن قبل اكتمال العدد</p>
-</div>
-
-<!-- CONTACT -->
-<div class="card">
-<h2>📞 تواصل</h2>
-
-<a class="btn whatsapp" href="https://wa.me/201098961264?text=مرحبا%20اريد%20حجز%20جلسة%20ABA">واتساب</a>
-<a class="btn facebook" href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">فيسبوك</a>
-<a class="btn instagram" href="https://www.instagram.com/mohamed_ghareib6">إنستجرام</a>
-<a class="btn email" href="mailto:Mohamedahmed0361@gmail.com">Email</a>
-<a class="btn call" href="tel:+201098961264">اتصل الآن</a>
 
 </div>
 
-<!-- BOOKING -->
-<div class="card" id="booking">
+<!-- الحجز -->
+<div class="card fade-up" id="booking">
 <h2>📅 احجز جلسة</h2>
 
-<input type="text" placeholder="اسمك">
-<input type="text" placeholder="رقمك">
-<textarea placeholder="اكتب المشكلة أو حالة الطفل"></textarea>
+<input type="text" id="name" placeholder="اسمك"><br><br>
+<input type="text" id="phone" placeholder="رقمك"><br><br>
+<textarea id="details" placeholder="تفاصيل"></textarea><br><br>
 
-<button class="btn booking" onclick="sendWhatsApp()">احجز الآن 🚀</button>
+<button onclick="send()">احجز الآن</button>
 
 </div>
 
-<!-- FLOAT -->
-<a href="https://wa.me/201098961264" class="floating-btn">💬</a>
+<!-- واتساب -->
+<a class="whatsapp" href="#" onclick="send()">💬</a>
 
 <script>
-function sendWhatsApp(){
-var name=document.querySelector('input').value;
-var phone=document.querySelectorAll('input')[1].value;
-var details=document.querySelector('textarea').value;
 
-if(name==""||phone==""){
-alert("من فضلك اكتب اسمك ورقمك");
-return;
+function send(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var details = document.getElementById("details").value;
+
+  var message = "مرحبا 👋\nأريد حجز جلسة ABA\n\nالاسم: " + name + "\nالرقم: " + phone + "\nالتفاصيل: " + details;
+
+  var url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
 }
 
-var msg="مرحبا اريد حجز جلسة\n\n"
-+"الاسم: "+name+"\n"
-+"الرقم: "+phone+"\n"
-+"التفاصيل: "+details;
+/* انيميشن */
+const elements = document.querySelectorAll('.fade-up');
 
-var url="https://wa.me/201098961264?text="+encodeURIComponent(msg);
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
 
-window.open(url,'_blank');
-}
 </script>
 
 </body>

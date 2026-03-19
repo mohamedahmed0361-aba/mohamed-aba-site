@@ -7,11 +7,12 @@
 
 <style>
 
-/* الشكل العام */
+/* ===== GENERAL ===== */
 body {
   margin: 0;
   font-family: Arial;
-  background: #e8f5f2;
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
 /* ===== HERO ===== */
@@ -22,74 +23,74 @@ body {
   position: relative;
 }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
+.overlay {
+  background: rgba(0,0,0,0.7);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px;
 }
 
-/* محتوى الهيرو */
 .hero-content {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  max-width: 320px;
   text-align: right;
+  max-width: 320px;
 }
 
-/* الجملة */
-.hero-text {
-  font-size: 20px;
-  margin-bottom: 10px;
-  animation: fadeDown 1.5s ease;
+.hero-top {
+  font-size: 18px;
+  color: #94a3b8;
 }
 
-/* الاسم */
 .hero-content h1 {
   font-size: 32px;
   margin: 10px 0;
 }
 
-/* التخصص */
 .hero-content p {
-  font-size: 16px;
+  color: #22c55e;
   margin-bottom: 20px;
 }
 
-/* زر */
 .hero-btn {
-  background: #00b894;
-  color: white;
+  background: #22c55e;
   padding: 12px 20px;
   border-radius: 10px;
-  border: none;
-}
-
-/* انيميشن */
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* ===== CARDS ===== */
 .card {
-  background: white;
+  background: #1e293b;
   margin: 20px;
   padding: 20px;
   border-radius: 15px;
   text-align: right;
 }
 
-/* انيميشن الكروت */
+/* ===== CONTACT BUTTONS ===== */
+.contact-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contact-btns a {
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.whatsapp { background: #25d366; }
+.facebook { background: #1877f2; }
+.instagram { background: #e1306c; }
+.call { background: #555; }
+
+/* ===== ANIMATION ===== */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
@@ -101,20 +102,20 @@ body {
   transform: translateY(0);
 }
 
-/* زر واتساب */
-.whatsapp {
+/* ===== FLOAT BUTTON ===== */
+.float-whatsapp {
   position: fixed;
   bottom: 20px;
   left: 20px;
   background: #25d366;
-  color: white;
   width: 55px;
   height: 55px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  color: white;
+  font-size: 22px;
 }
 
 </style>
@@ -124,36 +125,37 @@ body {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
+<div class="overlay">
+<div class="hero-content">
 
-    <div class="hero-text">
-      هل طفلك يعاني من صعوبة في التواصل أو السلوك؟ 🤔
-    </div>
+<div class="hero-top">
+الحل يبدأ بجلسة تقييم مبكرة
+</div>
 
-    <h1>Mohamed Ahmed Ghareib</h1>
-    <p>ASD Specialist | ABAT | IBT</p>
+<h1>Mohamed Ahmed Ghareib</h1>
 
-    <button class="hero-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-      🚀 احجز الآن
-    </button>
+<p>ASD Specialist | ABAT | IBT</p>
 
-  </div>
+<a href="#contact" class="hero-btn">تواصل معي</a>
+
+</div>
+</div>
 </section>
 
-<!-- ليه تختارني -->
+<!-- WHY -->
 <div class="card fade-up">
 <h2>⭐ ليه تختارني؟</h2>
 
 <ul style="list-style:none; padding:0;">
-<li>🎯 خبرة في تحليل السلوك التطبيقي (ABA)</li>
-<li>🧠 تحليل سلوك علمي دقيق</li>
-<li>📊 إعداد خطط فردية مناسبة (IEP)</li>
+<li>🎯 خبرة في ABA</li>
+<li>📊 إعداد خطط فردية (IEP)</li>
 <li>⚡ إعداد خطط تدخل سلوكي (BIP)</li>
-<li>👨‍👩‍👧 متابعة مستمرة مع الأسرة</li>
+<li>👨‍👩‍👧 متابعة مستمرة</li>
 </ul>
+
 </div>
 
-<!-- النتائج -->
+<!-- RESULTS -->
 <div class="card fade-up">
 <h2>📈 النتائج</h2>
 
@@ -166,36 +168,44 @@ body {
 
 </div>
 
-<!-- الحجز -->
-<div class="card fade-up" id="booking">
-<h2>📅 احجز جلسة</h2>
+<!-- CONTACT -->
+<div class="card fade-up" id="contact">
+<h2>📞 تواصل</h2>
 
-<input type="text" id="name" placeholder="اسمك"><br><br>
-<input type="text" id="phone" placeholder="رقمك"><br><br>
-<textarea id="details" placeholder="تفاصيل"></textarea><br><br>
+<div class="contact-btns">
 
-<button onclick="send()">احجز الآن</button>
+<a class="whatsapp" target="_blank"
+href="https://wa.me/201098961264?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة حضرتك بخصوص طفلي">
+واتساب
+</a>
+
+<a class="facebook" target="_blank"
+href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">
+فيسبوك
+</a>
+
+<a class="instagram" target="_blank"
+href="https://www.instagram.com/mohamed_ghareib6">
+انستجرام
+</a>
+
+<a class="call" href="tel:01098961264">
+اتصال
+</a>
 
 </div>
 
-<!-- واتساب -->
-<a class="whatsapp" href="#" onclick="send()">💬</a>
+</div>
+
+<!-- FLOAT BUTTON -->
+<a class="float-whatsapp"
+href="https://wa.me/201098961264?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة حضرتك بخصوص طفلي">
+💬
+</a>
 
 <script>
 
-function send(){
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var details = document.getElementById("details").value;
-
-  var message = "مرحبا 👋\nأريد حجز جلسة ABA\n\nالاسم: " + name + "\nالرقم: " + phone + "\nالتفاصيل: " + details;
-
-  var url = "https://wa.me/201098961264?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-}
-
-/* انيميشن */
+/* ANIMATION */
 const elements = document.querySelectorAll('.fade-up');
 
 window.addEventListener('scroll', () => {

@@ -28,7 +28,7 @@ body {
   height: 120%;
   background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
   z-index: 1;
-  transition: transform 0.2s;
+  will-change: transform;
 }
 
 .hero-overlay {
@@ -45,18 +45,19 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
-  padding: 40px 25px;
+  padding: 60px 25px 30px;
   text-align: right;
   max-width: 300px;
 }
 
-/* النص العلوي */
+/* الجملة */
 .hero-top {
   font-size: 16px;
   color: #cbd5f5;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
+  animation: fadeDown 1s ease;
 }
 
 /* الاسم */
@@ -88,6 +89,18 @@ body {
   text-decoration: none;
   font-weight: bold;
   margin-top: 20px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== CARDS ===== */
@@ -126,7 +139,7 @@ body {
 .instagram { background: #e1306c; }
 .call { background: gray; }
 
-/* ===== FLOAT BUTTON ===== */
+/* ===== FLOAT ===== */
 .float {
   position: fixed;
   bottom: 20px;
@@ -252,11 +265,21 @@ href="https://wa.me/201010827183?text=السلام عليكم ورحمة الل�
 <!-- سكربت -->
 <script>
 
-// Parallax
+// Parallax بدون لاج
+let ticking = false;
+
 window.addEventListener("scroll", () => {
-  let scroll = window.scrollY;
-  document.querySelector(".hero-bg").style.transform =
-  "translateY(" + (scroll * 0.4) + "px) scale(1.1)";
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      let scroll = window.scrollY;
+
+      document.querySelector(".hero-bg").style.transform =
+        "translateY(" + (scroll * 0.2) + "px) scale(1.05)";
+
+      ticking = false;
+    });
+    ticking = true;
+  }
 });
 
 // Scroll Animation

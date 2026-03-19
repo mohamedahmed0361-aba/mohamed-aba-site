@@ -1,121 +1,95 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mohamed Ahmed Ghareib</title>
 
 <style>
 
 /* ===== GENERAL ===== */
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: #e5e7eb;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    text-align: center;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO SECTION ===== */
 .hero {
-  height: 100vh;
-  background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") no-repeat center top;
-  background-size: cover;
-  position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+    url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7068.jpeg") center/cover no-repeat;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.overlay {
-  background: rgba(0,0,0,0.7);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 20px;
+/* الكلام اللي فوق */
+.hero h1 {
+    font-size: 26px;
+    max-width: 90%;
+    animation: fadeUp 1.5s ease;
 }
 
-.hero-content {
-  text-align: right;
-  max-width: 320px;
+/* الاسم */
+.hero h2 {
+    font-size: 40px;
+    margin: 10px 0;
 }
 
-.hero-top {
-  font-size: 18px;
-  color: #94a3b8;
+/* التخصص */
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
 }
 
-.hero-content h1 {
-  font-size: 32px;
-  margin: 10px 0;
+/* زرار */
+.btn {
+    margin-top: 20px;
+    background: #22c55e;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 18px;
 }
 
-.hero-content p {
-  color: #22c55e;
-  margin-bottom: 20px;
+/* ===== SECTIONS ===== */
+.section {
+    background: #1e293b;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
 }
-
-.hero-btn {
-  background: #22c55e;
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* ===== CARDS ===== */
-.card {
-  background: #1e293b;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 15px;
-  text-align: right;
-}
-
-/* ===== CONTACT BUTTONS ===== */
-.contact-btns {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.contact-btns a {
-  padding: 10px 15px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.whatsapp { background: #25d366; }
-.facebook { background: #1877f2; }
-.instagram { background: #e1306c; }
-.call { background: #555; }
 
 /* ===== ANIMATION ===== */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ===== FLOAT BUTTON ===== */
-.float-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25d366;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 22px;
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 </style>
@@ -123,100 +97,60 @@ body {
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
-<div class="overlay">
-<div class="hero-content">
+<!-- ===== HERO ===== -->
+<div class="hero">
 
-<div class="hero-top">
-الحل يبدأ بجلسة تقييم مبكرة
-</div>
+<h1>Empowering children with autism to communicate, learn, and thrive</h1>
 
-<h1>Mohamed Ahmed Ghareib</h1>
+<h2>Mohamed Ahmed Ghareib</h2>
 
 <p>ASD Specialist | ABAT | IBT</p>
 
-<a href="#contact" class="hero-btn">تواصل معي</a>
-
-</div>
-</div>
-</section>
-
-<!-- WHY -->
-<div class="card fade-up">
-<h2>⭐ ليه تختارني؟</h2>
-
-<ul style="list-style:none; padding:0;">
-<li>🎯 خبرة في ABA</li>
-<li>📊 إعداد خطط فردية (IEP)</li>
-<li>⚡ إعداد خطط تدخل سلوكي (BIP)</li>
-<li>👨‍👩‍👧 متابعة مستمرة</li>
-</ul>
-
-</div>
-
-<!-- RESULTS -->
-<div class="card fade-up">
-<h2>📈 النتائج</h2>
-
-<p>
-✔ تحسين التواصل<br>
-✔ تقليل السلوكيات المشكلة<br>
-✔ زيادة التركيز<br>
-✔ تطوير المهارات الاجتماعية
-</p>
-
-</div>
-
-<!-- CONTACT -->
-<div class="card fade-up" id="contact">
-<h2>📞 تواصل</h2>
-
-<div class="contact-btns">
-
-<a class="whatsapp" target="_blank"
-href="https://wa.me/201098961264?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة حضرتك بخصوص طفلي">
-واتساب
-</a>
-
-<a class="facebook" target="_blank"
-href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">
-فيسبوك
-</a>
-
-<a class="instagram" target="_blank"
-href="https://www.instagram.com/mohamed_ghareib6">
-انستجرام
-</a>
-
-<a class="call" href="tel:01098961264">
-اتصال
+<a class="btn" href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته، اريد استشارة بخصوص طفلي">
+تواصل معي
 </a>
 
 </div>
 
+<!-- ===== WHY CHOOSE ME ===== -->
+<div class="section">
+<h2>⭐ Why Choose Me?</h2>
+
+<p>🎯 Experience in ABA therapy</p>
+<p>🧠 Scientific behavior analysis</p>
+<p>📊 Individualized plans (IEP)</p>
+<p>⚡ Behavior intervention plans (BIP)</p>
+<p>👨‍👩‍👦 Continuous follow-up with parents</p>
+
 </div>
 
-<!-- FLOAT BUTTON -->
-<a class="float-whatsapp"
-href="https://wa.me/201098961264?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة حضرتك بخصوص طفلي">
+<!-- ===== RESULTS ===== -->
+<div class="section">
+<h2>📈 Expected Results</h2>
+
+<p>✔ Improved communication</p>
+<p>✔ Reduced problem behaviors</p>
+<p>✔ Better focus</p>
+<p>✔ Social skills development</p>
+
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div class="section">
+<h2>📞 Contact</h2>
+
+<a class="btn" href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">Facebook</a>
+<br><br>
+<a class="btn" href="https://www.instagram.com/mohamed_ghareib6?igsh=Z3dmM2EwMTIyNTls&utm_source=qr">Instagram</a>
+<br><br>
+<a class="btn" href="tel:+201010827183">Call Me</a>
+
+</div>
+
+<!-- ===== WHATSAPP FLOAT BUTTON ===== -->
+<a class="whatsapp" href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته، اريد استشارة بخصوص طفلي">
 💬
 </a>
-
-<script>
-
-/* ANIMATION */
-const elements = document.querySelectorAll('.fade-up');
-
-window.addEventListener('scroll', () => {
-  elements.forEach(el => {
-    if(el.getBoundingClientRect().top < window.innerHeight - 50){
-      el.classList.add('show');
-    }
-  });
-});
-
-</script>
 
 </body>
 </html>

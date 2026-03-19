@@ -28,6 +28,7 @@ body {
   height: 120%;
   background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
   z-index: 1;
+  transition: transform 0.2s;
 }
 
 .hero-overlay {
@@ -46,28 +47,39 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  padding: 30px;
+  padding: 40px 25px;
   text-align: right;
+  max-width: 300px;
 }
 
+/* النص العلوي */
 .hero-top {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px;
+  color: #cbd5f5;
+  margin-bottom: 8px;
 }
 
+/* الاسم */
 .hero-content h1 {
-  font-size: 30px;
+  font-size: 26px;
+  line-height: 1.3;
+  margin: 5px 0;
 }
 
+/* التخصص */
 .hero-content p {
   color: #22c55e;
+  font-size: 16px;
+  margin: 5px 0;
 }
 
+/* الشهادة */
 .degree {
-  font-size: 14px;
+  font-size: 13px;
   color: #94a3b8;
 }
 
+/* زرار */
 .hero-btn {
   background: #22c55e;
   padding: 12px 20px;
@@ -75,7 +87,7 @@ body {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 /* ===== CARDS ===== */
@@ -95,7 +107,7 @@ body {
   transform: translateX(0);
 }
 
-/* ===== BUTTONS ===== */
+/* ===== CONTACT ===== */
 .contact-btns {
   display: flex;
   gap: 10px;
@@ -114,7 +126,7 @@ body {
 .instagram { background: #e1306c; }
 .call { background: gray; }
 
-/* ===== FLOAT ===== */
+/* ===== FLOAT BUTTON ===== */
 .float {
   position: fixed;
   bottom: 20px;
@@ -127,6 +139,7 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+  font-size: 20px;
 }
 
 </style>
@@ -158,7 +171,7 @@ ASD Specialist | ABAT | IBT <br>
 </section>
 
 <!-- مشاكل الطفل -->
-<div class="card hidden">
+<div class="card">
 <h2>❗ هل طفلك يعاني من:</h2>
 
 <p>
@@ -175,7 +188,7 @@ ASD Specialist | ABAT | IBT <br>
 </div>
 
 <!-- ليه تختارني -->
-<div class="card hidden">
+<div class="card">
 <h2>⭐ ليه تختارني؟</h2>
 
 <p>
@@ -188,21 +201,21 @@ ASD Specialist | ABAT | IBT <br>
 </div>
 
 <!-- الكورسات -->
-<div class="card hidden">
+<div class="card">
 <h2>📜 الكورسات</h2>
 
 <p>
-✔ فني تحليل سلوك تطبيقي (ABAT) معتمد من البورد الأمريكي (QABA)<br>
-✔ معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
+✔ فني تحليل سلوك تطبيقي (ABAT) معتمد من QABA<br>
+✔ معالج سلوك دولي (IBT) معتمد من IBAO<br>
 ✔ برنامج (ABLLS-R)<br>
-✔ نظام التواصل بتبادل الصور (PECS)<br>
-✔ مقياس (GARS-3) لتشخيص التوحد
+✔ نظام التواصل (PECS)<br>
+✔ مقياس (GARS-3)
 </p>
 
 </div>
 
 <!-- تواصل -->
-<div class="card hidden" id="contact">
+<div class="card" id="contact">
 <h2>📞 تواصل</h2>
 
 <div class="contact-btns">
@@ -246,7 +259,7 @@ window.addEventListener("scroll", () => {
   "translateY(" + (scroll * 0.4) + "px) scale(1.1)";
 });
 
-// Scroll animation
+// Scroll Animation
 const cards = document.querySelectorAll(".card");
 
 window.addEventListener("scroll", () => {

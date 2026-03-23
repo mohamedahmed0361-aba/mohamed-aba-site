@@ -44,7 +44,7 @@ justify-content:flex-start;
 padding:30px;
 }
 
-/* الجملة فوق خالص */
+/* الجملة */
 .hero-top{
 font-size:22px;
 margin-top:10px;
@@ -56,10 +56,11 @@ font-size:30px;
 margin-top:15px;
 }
 
-/* التخصص */
+/* 👇 التعديل هنا */
 .hero-sub{
-margin-top:15px;
+margin-top:60px; /* نزلناه تحت */
 color:#22c55e;
+font-size:18px;
 }
 
 /* cards */
@@ -78,7 +79,7 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* popup button */
+/* popup */
 .popup-btn{
 position:fixed;
 bottom:-100px;
@@ -232,7 +233,6 @@ onclick="playSound()">
 
 <script>
 
-/* صوت + اهتزاز */
 function playSound(){
 let sound=document.getElementById("clickSound");
 sound.currentTime=0;
@@ -243,10 +243,10 @@ navigator.vibrate(100);
 }
 }
 
-/* يظهر بعد 6 ثواني */
+/* 👇 التعديل هنا */
 setTimeout(()=>{
 document.getElementById("popupBtn").classList.add("show");
-},6000);
+},11000);
 
 /* انيميشن السكرول */
 let cards=document.querySelectorAll(".card");

@@ -39,57 +39,27 @@ position:relative;
 height:100%;
 display:flex;
 flex-direction:column;
-justify-content:center;
 align-items:flex-end;
+justify-content:flex-start;
 padding:30px;
 }
 
+/* الجملة فوق خالص */
 .hero-top{
 font-size:22px;
-margin-bottom:10px;
-}
-
-.hero-content h1{
-font-size:32px;
-margin:10px 0;
-}
-
-.hero-sub{
-color:#22c55e;
 margin-top:10px;
 }
 
-/* زرار */
-.main-btn{
-margin-top:25px;
-background:#22c55e;
-padding:16px 28px;
-border-radius:14px;
-color:black;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 0 10px #22c55e,0 0 25px #22c55e,0 0 50px #22c55e;
-animation:floatBtn 2s infinite;
+/* الاسم */
+.hero-content h1{
+font-size:30px;
+margin-top:15px;
 }
 
-/* popup */
-.popup-btn{
-position:fixed;
-bottom:-100px;
-right:20px;
-background:#22c55e;
-padding:14px 22px;
-border-radius:12px;
-color:black;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 0 10px #22c55e,0 0 25px #22c55e;
-animation:floatBtn 2s infinite;
-transition:0.5s;
-}
-
-.popup-btn.show{
-bottom:30px;
+/* التخصص */
+.hero-sub{
+margin-top:15px;
+color:#22c55e;
 }
 
 /* cards */
@@ -108,17 +78,49 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* list */
-.list div{
-margin:8px 0;
+/* popup button */
+.popup-btn{
+position:fixed;
+bottom:-100px;
+right:20px;
+background:#22c55e;
+padding:15px 22px;
+border-radius:12px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 10px #22c55e,0 0 30px #22c55e;
+animation:floatBtn 2s infinite;
+transition:0.5s;
 }
 
-/* animations */
+.popup-btn.show{
+bottom:30px;
+}
+
+/* حركة */
 @keyframes floatBtn{
 0%{transform:translateY(0)}
 50%{transform:translateY(-6px)}
 100%{transform:translateY(0)}
 }
+
+/* أزرار التواصل */
+.contact-btns{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.contact-btns a{
+padding:10px 15px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+}
+
+.whatsapp{background:#25d366;}
+.call{background:#3b82f6;}
 
 </style>
 </head>
@@ -143,32 +145,26 @@ ASD Specialist | ABAT | IBT <br>
 B.Sc. Disability & Rehabilitation
 </p>
 
-<a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
-class="main-btn"
-onclick="playSound()">
-تواصل معي
-</a>
-
 </div>
 </section>
 
 <!-- مشاكل -->
-<div class="card right">
+<div class="card">
 <h2>❗ هل طفلك يعاني من صعوبات في:</h2>
-<div class="list">
-<div>🗣️ التواصل</div>
-<div>📩 الطلب</div>
-<div>💬 التعبير عن احتياجاته</div>
-<div>⚡ مشاكل سلوكية</div>
-<div>⏳ عدم انتظار الدور</div>
-<div>🧠 صعوبة في التسمية</div>
-<div>📚 صعوبة في الفهم والإدراك</div>
-<div>👁️ صعوبة في الأداء البصري</div>
-</div>
+<p>
+التواصل<br>
+الطلب<br>
+التعبير عن احتياجاته<br>
+مشاكل سلوكية<br>
+عدم انتظار الدور<br>
+صعوبة في التسمية<br>
+صعوبة في الفهم والإدراك<br>
+صعوبة في الأداء البصري
+</p>
 </div>
 
 <!-- ليه تختارني -->
-<div class="card left">
+<div class="card">
 <h2>⭐ ليه تختارني؟</h2>
 <p>
 خبرة في تحليل السلوك التطبيقي (ABA)<br>
@@ -179,38 +175,45 @@ onclick="playSound()">
 </div>
 
 <!-- النتائج -->
-<div class="card right">
-<h2>📈 نتائج ملحوظة:</h2>
-<div class="list">
-<div>✔ تحسن التواصل</div>
-<div>✔ تقليل السلوكيات</div>
-<div>✔ زيادة التركيز</div>
-<div>✔ مهارات اجتماعية أفضل</div>
-<div>✔ تحسين نمط الأكل</div>
-</div>
+<div class="card">
+<h2>📈 نتائج ملحوظة</h2>
+<p>
+تحسن التواصل<br>
+تقليل السلوكيات<br>
+زيادة التركيز<br>
+مهارات اجتماعية أفضل<br>
+تحسين نمط الأكل
+</p>
 </div>
 
 <!-- الكورسات -->
-<div class="card left">
-<h2>📜 الكورسات:</h2>
+<div class="card">
+<h2>📜 الكورسات</h2>
 <p>
-ABAT (QABA)<br>
-IBT (IBAO)<br>
-ABLLS-R<br>
-PECS<br>
-GARS-3
+فني تحليل سلوك تطبيقي (ABAT) معتمد من البورد الأمريكي (QABA)<br>
+معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
+نظام التواصل بتبادل الصور (PECS)<br>
+برنامج (ABLLS-R)<br>
+GARS-3 لتشخيص اضطراب طيف التوحد
 </p>
 </div>
 
 <!-- تواصل -->
-<div class="card right" id="contact">
+<div class="card">
 <h2>📞 تواصل</h2>
 
-<a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
-class="main-btn"
-onclick="playSound()">
+<div class="contact-btns">
+
+<a class="whatsapp"
+href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
 واتساب
 </a>
+
+<a class="call" href="tel:01010827183">
+اتصال
+</a>
+
+</div>
 
 </div>
 
@@ -229,6 +232,7 @@ onclick="playSound()">
 
 <script>
 
+/* صوت + اهتزاز */
 function playSound(){
 let sound=document.getElementById("clickSound");
 sound.currentTime=0;
@@ -239,10 +243,10 @@ navigator.vibrate(100);
 }
 }
 
-/* ظهور popup بعد 5 ثواني */
+/* يظهر بعد 6 ثواني */
 setTimeout(()=>{
 document.getElementById("popupBtn").classList.add("show");
-},5000);
+},6000);
 
 /* انيميشن السكرول */
 let cards=document.querySelectorAll(".card");

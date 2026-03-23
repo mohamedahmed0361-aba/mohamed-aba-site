@@ -193,4 +193,83 @@ body {
 
 <h1>Mohamed Ahmed Ghareib</h1>
 
-<p class="hero
+<p class="hero-sub">
+ASD Specialist | ABAT | IBT <br>
+<span class="degree">B.Sc. Disability & Rehabilitation</span>
+</p>
+
+<a href="#contact" class="hero-btn">تواصل معي</a>
+
+</div>
+</section>
+
+<!-- مشاكل -->
+<div class="card right">
+<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
+
+<div class="list">
+<div>🗣️ التواصل</div>
+<div>📩 الطلب</div>
+<div>💬 التعبير عن احتياجاته</div>
+<div>⚡ مشاكل سلوكية</div>
+<div>⏳ عدم انتظار الدور</div>
+<div>🧠 صعوبة في التسمية</div>
+<div>📚 صعوبة في الفهم والإدراك</div>
+<div>👁️ صعوبة في الأداء البصري</div>
+</div>
+
+</div>
+
+<!-- ليه تختارني -->
+<div class="card left">
+<h2>⭐ ليه تختارني؟</h2>
+<p>
+خبرة في تحليل السلوك التطبيقي (ABA)<br>
+عمل خطط تربوية فردية مناسبة لكل حالة (IEP)<br>
+إعداد خطط التدخل السلوكي (BIP)<br>
+متابعة مستمرة مع الأسرة
+</p>
+</div>
+
+<!-- الكورسات -->
+<div class="card right">
+<h2>📜 الكورسات</h2>
+<p>
+فني تحليل سلوك تطبيقي (ABAT) معتمد من البورد الأمريكي (QABA)<br>
+معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
+خبرة في برنامج (ABLLS-R)<br>
+خبرة في نظام التواصل بتبادل الصور (PECS)<br>
+GARS-3 لتشخيص التوحد
+</p>
+</div>
+
+<!-- تواصل -->
+<div class="card left" id="contact">
+<h2>📞 تواصل</h2>
+
+<div class="contact-btns">
+<a class="whatsapp" href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة بخصوص طفلي">واتساب</a>
+<a class="facebook" href="#">فيسبوك</a>
+<a class="instagram" href="#">انستجرام</a>
+<a class="call" href="tel:01010827183">اتصال</a>
+</div>
+
+</div>
+
+<a class="float" href="https://wa.me/201010827183">💬</a>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+window.addEventListener("scroll", () => {
+  cards.forEach(card => {
+    let top = card.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      card.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>

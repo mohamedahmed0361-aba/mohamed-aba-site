@@ -7,102 +7,117 @@
 
 <style>
 
-body {
-  margin: 0;
-  font-family: Arial;
-  background: #0f172a;
-  color: #fff;
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
 }
 
 /* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
+.hero{
+position:relative;
+height:100vh;
 }
 
-.hero-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
+.hero-bg{
+position:absolute;
+width:100%;
+height:100%;
+background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
 }
 
-.hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
 }
 
-.hero-content {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 30px;
+.hero-content{
+position:relative;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:flex-end;
+padding:30px;
 }
 
-.hero-top {
-  font-size: 22px;
-  margin-bottom: 10px;
+.hero-top{
+font-size:22px;
+margin-bottom:10px;
 }
 
-.hero-content h1 {
-  font-size: 32px;
-  margin: 10px 0;
+.hero-content h1{
+font-size:32px;
+margin:10px 0;
 }
 
-.hero-sub {
-  margin-top: 10px;
-  color: #22c55e;
+.hero-sub{
+color:#22c55e;
+margin-top:10px;
 }
 
-/* زرار رئيسي */
-.main-btn {
-  margin-top: 25px;
-  background: #22c55e;
-  padding: 16px 28px;
-  border-radius: 14px;
-  color: black;
-  text-decoration: none;
-  font-weight: bold;
-
-  /* 💀 Glow تقيل */
-  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e, 0 0 50px #22c55e;
-
-  /* حركة */
-  animation: floatBtn 2s infinite ease-in-out;
+/* زرار */
+.main-btn{
+margin-top:25px;
+background:#22c55e;
+padding:16px 28px;
+border-radius:14px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 10px #22c55e,0 0 25px #22c55e,0 0 50px #22c55e;
+animation:floatBtn 2s infinite;
 }
 
-/* زرار popup */
-.popup-btn {
-  position: fixed;
-  bottom: -100px;
-  right: 20px;
-  background: #22c55e;
-  padding: 14px 22px;
-  border-radius: 12px;
-  color: black;
-  font-weight: bold;
-  text-decoration: none;
-
-  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e, 0 0 50px #22c55e;
-
-  animation: floatBtn 2s infinite ease-in-out;
-  transition: 0.5s;
+/* popup */
+.popup-btn{
+position:fixed;
+bottom:-100px;
+right:20px;
+background:#22c55e;
+padding:14px 22px;
+border-radius:12px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+box-shadow:0 0 10px #22c55e,0 0 25px #22c55e;
+animation:floatBtn 2s infinite;
+transition:0.5s;
 }
 
-.popup-btn.show {
-  bottom: 30px;
+.popup-btn.show{
+bottom:30px;
 }
 
-/* حركة خفيفة */
-@keyframes floatBtn {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-  100% { transform: translateY(0); }
+/* cards */
+.card{
+background:#1e293b;
+margin:20px;
+padding:20px;
+border-radius:15px;
+opacity:0;
+transform:translateY(40px);
+transition:0.7s;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* list */
+.list div{
+margin:8px 0;
+}
+
+/* animations */
+@keyframes floatBtn{
+0%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
+100%{transform:translateY(0)}
 }
 
 </style>
@@ -137,7 +152,69 @@ onclick="playSound()">
 </div>
 </section>
 
-<!-- زرار يظهر بعد 5 ثواني -->
+<!-- مشاكل -->
+<div class="card right">
+<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
+<div class="list">
+<div>🗣️ التواصل</div>
+<div>📩 الطلب</div>
+<div>💬 التعبير عن احتياجاته</div>
+<div>⚡ مشاكل سلوكية</div>
+<div>⏳ عدم انتظار الدور</div>
+<div>🧠 صعوبة في التسمية</div>
+<div>📚 صعوبة في الفهم والإدراك</div>
+<div>👁️ صعوبة في الأداء البصري</div>
+</div>
+</div>
+
+<!-- ليه تختارني -->
+<div class="card left">
+<h2>⭐ ليه تختارني؟</h2>
+<p>
+خبرة في تحليل السلوك التطبيقي (ABA)<br>
+إعداد خطط تربوية فردية (IEP)<br>
+إعداد خطط التدخل السلوكي (BIP)<br>
+متابعة مستمرة مع الأسرة
+</p>
+</div>
+
+<!-- النتائج -->
+<div class="card right">
+<h2>📈 نتائج ملحوظة:</h2>
+<div class="list">
+<div>✔ تحسن التواصل</div>
+<div>✔ تقليل السلوكيات</div>
+<div>✔ زيادة التركيز</div>
+<div>✔ مهارات اجتماعية أفضل</div>
+<div>✔ تحسين نمط الأكل</div>
+</div>
+</div>
+
+<!-- الكورسات -->
+<div class="card left">
+<h2>📜 الكورسات:</h2>
+<p>
+ABAT (QABA)<br>
+IBT (IBAO)<br>
+ABLLS-R<br>
+PECS<br>
+GARS-3
+</p>
+</div>
+
+<!-- تواصل -->
+<div class="card right" id="contact">
+<h2>📞 تواصل</h2>
+
+<a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
+class="main-btn"
+onclick="playSound()">
+واتساب
+</a>
+
+</div>
+
+<!-- popup -->
 <a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
 class="popup-btn"
 id="popupBtn"
@@ -147,26 +224,37 @@ onclick="playSound()">
 
 <!-- صوت -->
 <audio id="clickSound" preload="auto">
-  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
 </audio>
 
 <script>
 
 function playSound(){
-  let sound = document.getElementById("clickSound");
+let sound=document.getElementById("clickSound");
+sound.currentTime=0;
+sound.play().catch(e=>{});
 
-  sound.currentTime = 0;
-  sound.play().catch(e => {});
-
-  if (navigator.vibrate) {
-    navigator.vibrate(100);
-  }
+if(navigator.vibrate){
+navigator.vibrate(100);
+}
 }
 
-/* يظهر بعد 5 ثواني */
-setTimeout(() => {
-  document.getElementById("popupBtn").classList.add("show");
-}, 5000);
+/* ظهور popup بعد 5 ثواني */
+setTimeout(()=>{
+document.getElementById("popupBtn").classList.add("show");
+},5000);
+
+/* انيميشن السكرول */
+let cards=document.querySelectorAll(".card");
+
+window.addEventListener("scroll",()=>{
+cards.forEach(card=>{
+let top=card.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+card.classList.add("show");
+}
+});
+});
 
 </script>
 

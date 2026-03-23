@@ -54,9 +54,8 @@ font-size:30px;
 margin-top:15px;
 }
 
-/* 💀 نزلناه جامد */
 .hero-sub{
-margin-top:120px;
+margin-top:170px;
 color:#22c55e;
 font-size:18px;
 }
@@ -77,30 +76,45 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* popup */
+/* 💀 الزرار */
 .popup-btn{
 position:fixed;
 bottom:-100px;
 right:20px;
 background:#22c55e;
-padding:15px 22px;
-border-radius:12px;
+padding:16px 26px;
+border-radius:14px;
 color:black;
 font-weight:bold;
 text-decoration:none;
-box-shadow:0 0 10px #22c55e,0 0 30px #22c55e;
-animation:floatBtn 2s infinite;
-transition:0.5s;
+font-size:16px;
+
+/* جلو */
+box-shadow:0 0 15px #22c55e,0 0 40px #22c55e,0 0 80px #22c55e;
+
+opacity:0;
+transition:0.6s;
 }
 
+/* يظهر */
 .popup-btn.show{
 bottom:30px;
+opacity:1;
+animation:popUp 0.6s ease, pulse 1.5s infinite 0.6s;
 }
 
-@keyframes floatBtn{
-0%{transform:translateY(0)}
-50%{transform:translateY(-6px)}
-100%{transform:translateY(0)}
+/* حركة الظهور */
+@keyframes popUp{
+0%{transform:scale(0.5) translateY(50px); opacity:0;}
+60%{transform:scale(1.1) translateY(-10px);}
+100%{transform:scale(1) translateY(0); opacity:1;}
+}
+
+/* 💣 Pulse */
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
 }
 
 /* تواصل */
@@ -125,7 +139,6 @@ color:white;
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-bg"></div>
 <div class="hero-overlay"></div>
@@ -146,76 +159,30 @@ B.Sc. Disability & Rehabilitation
 </div>
 </section>
 
-<!-- مشاكل -->
-<div class="card">
-<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
-<p>
-التواصل<br>
-الطلب<br>
-التعبير عن احتياجاته<br>
-مشاكل سلوكية<br>
-عدم انتظار الدور<br>
-صعوبة في التسمية<br>
-صعوبة في الفهم والإدراك<br>
-صعوبة في الأداء البصري
-</p>
-</div>
+<!-- باقي الموقع -->
+<div class="card"><h2>❗ هل طفلك يعاني من صعوبات في:</h2><p>التواصل<br>الطلب<br>التعبير<br>مشاكل سلوكية<br>عدم انتظار الدور<br>صعوبة التسمية<br>الفهم<br>الأداء البصري</p></div>
 
-<!-- ليه تختارني -->
-<div class="card">
-<h2>⭐ ليه تختارني؟</h2>
-<p>
-خبرة في تحليل السلوك التطبيقي (ABA)<br>
-إعداد خطط تربوية فردية (IEP)<br>
-إعداد خطط التدخل السلوكي (BIP)<br>
-متابعة مستمرة مع الأسرة
-</p>
-</div>
+<div class="card"><h2>⭐ ليه تختارني؟</h2><p>خبرة ABA<br>IEP<br>BIP<br>متابعة مستمرة</p></div>
 
-<!-- النتائج -->
-<div class="card">
-<h2>📈 نتائج ملحوظة</h2>
-<p>
-تحسن التواصل<br>
-تقليل السلوكيات<br>
-زيادة التركيز<br>
-مهارات اجتماعية أفضل<br>
-تحسين نمط الأكل
-</p>
-</div>
+<div class="card"><h2>📈 نتائج</h2><p>تحسن التواصل<br>تقليل السلوك<br>زيادة التركيز<br>مهارات اجتماعية<br>تحسين الأكل</p></div>
 
-<!-- الكورسات -->
-<div class="card">
-<h2>📜 الكورسات</h2>
-<p>
-فني تحليل سلوك تطبيقي (ABAT) معتمد من البورد الأمريكي (QABA)<br>
-معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
-نظام التواصل بتبادل الصور (PECS)<br>
-برنامج (ABLLS-R)<br>
-GARS-3 لتشخيص اضطراب طيف التوحد
-</p>
-</div>
+<div class="card"><h2>📜 الكورسات</h2><p>
+فني تحليل سلوك تطبيقي (ABAT) - QABA<br>
+معالج سلوك دولي (IBT) - IBAO<br>
+PECS<br>
+ABLLS-R<br>
+GARS-3
+</p></div>
 
-<!-- تواصل -->
 <div class="card">
 <h2>📞 تواصل</h2>
-
 <div class="contact-btns">
-
-<a class="whatsapp"
-href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
-واتساب
-</a>
-
-<a class="call" href="tel:01010827183">
-اتصال
-</a>
-
+<a class="whatsapp" href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">واتساب</a>
+<a class="call" href="tel:01010827183">اتصال</a>
+</div>
 </div>
 
-</div>
-
-<!-- popup -->
+<!-- الزرار -->
 <a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
 class="popup-btn"
 id="popupBtn"
@@ -236,16 +203,18 @@ sound.currentTime=0;
 sound.play().catch(e=>{});
 
 if(navigator.vibrate){
-navigator.vibrate(100);
+navigator.vibrate([100,50,100]);
 }
 }
 
-/* يظهر بعد 11 ثانية */
+/* 💀 يظهر بعد 15 ثانية + صوت */
 setTimeout(()=>{
-document.getElementById("popupBtn").classList.add("show");
-},11000);
+let btn=document.getElementById("popupBtn");
+btn.classList.add("show");
+playSound(); /* 👈 صوت لما يظهر */
+},15000);
 
-/* scroll */
+/* scroll animation */
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{

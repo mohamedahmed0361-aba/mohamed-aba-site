@@ -76,44 +76,41 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* 💀 الزرار */
+/* زرار */
 .popup-btn{
 position:fixed;
 bottom:-100px;
 right:20px;
-background:#22c55e;
+background:#16a34a; /* 👈 لون أهدى */
 padding:16px 26px;
 border-radius:14px;
-color:black;
+color:white;
 font-weight:bold;
 text-decoration:none;
 font-size:16px;
 
-/* جلو */
-box-shadow:0 0 15px #22c55e,0 0 40px #22c55e,0 0 80px #22c55e;
+box-shadow:0 0 10px rgba(22,163,74,0.5);
 
 opacity:0;
 transition:0.6s;
 }
 
-/* يظهر */
 .popup-btn.show{
 bottom:30px;
 opacity:1;
 animation:popUp 0.6s ease, pulse 1.5s infinite 0.6s;
 }
 
-/* حركة الظهور */
+/* animations */
 @keyframes popUp{
 0%{transform:scale(0.5) translateY(50px); opacity:0;}
 60%{transform:scale(1.1) translateY(-10px);}
-100%{transform:scale(1) translateY(0); opacity:1;}
+100%{transform:scale(1);}
 }
 
-/* 💣 Pulse */
 @keyframes pulse{
 0%{transform:scale(1);}
-50%{transform:scale(1.08);}
+50%{transform:scale(1.05);}
 100%{transform:scale(1);}
 }
 
@@ -159,30 +156,64 @@ B.Sc. Disability & Rehabilitation
 </div>
 </section>
 
-<!-- باقي الموقع -->
-<div class="card"><h2>❗ هل طفلك يعاني من صعوبات في:</h2><p>التواصل<br>الطلب<br>التعبير<br>مشاكل سلوكية<br>عدم انتظار الدور<br>صعوبة التسمية<br>الفهم<br>الأداء البصري</p></div>
+<!-- مشاكل -->
+<div class="card">
+<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
+<p>
+التواصل<br>
+الطلب<br>
+التعبير عن احتياجاته<br>
+مشاكل سلوكية<br>
+عدم انتظار الدور<br>
+صعوبة في التسمية<br>
+صعوبة في الفهم والإدراك<br>
+صعوبة في الأداء البصري
+</p>
+</div>
 
-<div class="card"><h2>⭐ ليه تختارني؟</h2><p>خبرة ABA<br>IEP<br>BIP<br>متابعة مستمرة</p></div>
+<!-- ليه تختارني -->
+<div class="card">
+<h2>⭐ ليه تختارني؟</h2>
+<p>
+خبرة في تحليل السلوك التطبيقي (ABA)<br>
+عمل خطة تربية فردية (IEP)<br>
+عمل خطة التدخل السلوكي (BIP)<br>
+متابعة مستمرة مع الأسرة
+</p>
+</div>
 
-<div class="card"><h2>📈 نتائج</h2><p>تحسن التواصل<br>تقليل السلوك<br>زيادة التركيز<br>مهارات اجتماعية<br>تحسين الأكل</p></div>
+<!-- الكورسات -->
+<div class="card">
+<h2>📜 الكورسات</h2>
+<p>
+فني تحليل سلوك تطبيقي معتمد من البورد الأمريكي (QABA)<br>
+معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
+برنامج (ABLLS-R)<br>
+نظام التواصل بتبادل الصور (PECS)<br>
+GARS-3 لتشخيص اضطراب طيف التوحد
+</p>
+</div>
 
-<div class="card"><h2>📜 الكورسات</h2><p>
-فني تحليل سلوك تطبيقي (ABAT) - QABA<br>
-معالج سلوك دولي (IBT) - IBAO<br>
-PECS<br>
-ABLLS-R<br>
-GARS-3
-</p></div>
-
+<!-- تواصل -->
 <div class="card">
 <h2>📞 تواصل</h2>
+
 <div class="contact-btns">
-<a class="whatsapp" href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">واتساب</a>
-<a class="call" href="tel:01010827183">اتصال</a>
-</div>
+
+<a class="whatsapp"
+href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
+واتساب
+</a>
+
+<a class="call" href="tel:01010827183">
+اتصال
+</a>
+
 </div>
 
-<!-- الزرار -->
+</div>
+
+<!-- زرار -->
 <a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
 class="popup-btn"
 id="popupBtn"
@@ -190,7 +221,6 @@ onclick="playSound()">
 تواصل معي
 </a>
 
-<!-- صوت -->
 <audio id="clickSound" preload="auto">
 <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
 </audio>
@@ -207,14 +237,14 @@ navigator.vibrate([100,50,100]);
 }
 }
 
-/* 💀 يظهر بعد 15 ثانية + صوت */
+/* 👈 بعد 20 ثانية */
 setTimeout(()=>{
 let btn=document.getElementById("popupBtn");
 btn.classList.add("show");
-playSound(); /* 👈 صوت لما يظهر */
-},15000);
+playSound();
+},20000);
 
-/* scroll animation */
+/* scroll */
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{

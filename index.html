@@ -44,21 +44,19 @@ justify-content:flex-start;
 padding:30px;
 }
 
-/* الجملة */
 .hero-top{
 font-size:22px;
 margin-top:10px;
 }
 
-/* الاسم */
 .hero-content h1{
 font-size:30px;
 margin-top:15px;
 }
 
-/* 👇 التعديل هنا */
+/* 💀 نزلناه جامد */
 .hero-sub{
-margin-top:60px; /* نزلناه تحت */
+margin-top:120px;
 color:#22c55e;
 font-size:18px;
 }
@@ -99,14 +97,13 @@ transition:0.5s;
 bottom:30px;
 }
 
-/* حركة */
 @keyframes floatBtn{
 0%{transform:translateY(0)}
 50%{transform:translateY(-6px)}
 100%{transform:translateY(0)}
 }
 
-/* أزرار التواصل */
+/* تواصل */
 .contact-btns{
 display:flex;
 gap:10px;
@@ -243,12 +240,12 @@ navigator.vibrate(100);
 }
 }
 
-/* 👇 التعديل هنا */
+/* يظهر بعد 11 ثانية */
 setTimeout(()=>{
 document.getElementById("popupBtn").classList.add("show");
 },11000);
 
-/* انيميشن السكرول */
+/* scroll */
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{

@@ -18,7 +18,6 @@ body {
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden;
 }
 
 .hero-bg {
@@ -40,49 +39,44 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
-  padding: 40px 25px;
+  padding: 30px;
 }
 
-/* النص */
 .hero-top {
   font-size: 22px;
-  font-weight: bold;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-/* الاسم */
 .hero-content h1 {
-  font-size: 34px;
-  margin: 15px 0;
+  font-size: 32px;
+  margin: 10px 0;
 }
 
-/* التخصص */
 .hero-sub {
-  margin-top: 20px;
+  margin-top: 10px;
   color: #22c55e;
-  font-size: 17px;
 }
 
-.degree {
-  font-size: 14px;
-  color: #cbd5f5;
-}
-
-/* زرار */
-.hero-btn {
+/* زرار رئيسي */
+.main-btn {
   margin-top: 25px;
   background: #22c55e;
-  padding: 16px 30px;
+  padding: 16px 28px;
   border-radius: 14px;
   color: black;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 0 20px rgba(34,197,94,0.9);
-  animation: pulse 1.5s infinite;
+
+  /* 💀 Glow تقيل */
+  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e, 0 0 50px #22c55e;
+
+  /* حركة */
+  animation: floatBtn 2s infinite ease-in-out;
 }
 
-/* popup زرار */
+/* زرار popup */
 .popup-btn {
   position: fixed;
   bottom: -100px;
@@ -93,87 +87,22 @@ body {
   color: black;
   font-weight: bold;
   text-decoration: none;
+
+  box-shadow: 0 0 10px #22c55e, 0 0 25px #22c55e, 0 0 50px #22c55e;
+
+  animation: floatBtn 2s infinite ease-in-out;
   transition: 0.5s;
-  box-shadow: 0 0 20px rgba(34,197,94,0.7);
 }
 
 .popup-btn.show {
   bottom: 30px;
 }
 
-/* cards */
-.card {
-  background: #1e293b;
-  margin: 20px;
-  padding: 22px;
-  border-radius: 15px;
-  opacity: 0;
-  transition: 0.8s;
-}
-
-.card.right { transform: translateX(80px); }
-.card.left { transform: translateX(-80px); }
-
-.card.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* list */
-.list div {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeItem 0.5s forwards;
-}
-
-.list div:nth-child(1){ animation-delay: 0.2s }
-.list div:nth-child(2){ animation-delay: 0.4s }
-.list div:nth-child(3){ animation-delay: 0.6s }
-.list div:nth-child(4){ animation-delay: 0.8s }
-.list div:nth-child(5){ animation-delay: 1s }
-.list div:nth-child(6){ animation-delay: 1.2s }
-.list div:nth-child(7){ animation-delay: 1.4s }
-.list div:nth-child(8){ animation-delay: 1.6s }
-
-/* contact */
-.contact-btns {
-  display: flex;
-  gap: 10px;
-}
-
-.contact-btns a {
-  padding: 10px;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.whatsapp { background: #25d366; }
-.call { background: gray; }
-
-/* floating */
-.float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25d366;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* animations */
-@keyframes fadeItem {
-  to { opacity:1; transform: translateY(0); }
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 10px rgba(34,197,94,0.6); }
-  50% { box-shadow: 0 0 30px rgba(34,197,94,1); }
-  100% { box-shadow: 0 0 10px rgba(34,197,94,0.6); }
+/* حركة خفيفة */
+@keyframes floatBtn {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
 
 </style>
@@ -196,124 +125,48 @@ body {
 
 <p class="hero-sub">
 ASD Specialist | ABAT | IBT <br>
-<span class="degree">B.Sc. Disability & Rehabilitation</span>
+B.Sc. Disability & Rehabilitation
 </p>
 
-<a href="#contact" class="hero-btn" onclick="playSound()">🚀 Contact Me</a>
+<a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
+class="main-btn"
+onclick="playSound()">
+تواصل معي
+</a>
 
 </div>
 </section>
 
-<!-- مشاكل -->
-<div class="card right">
-<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
-<div class="list">
-<div>🗣️ التواصل</div>
-<div>📩 الطلب</div>
-<div>💬 التعبير عن احتياجاته</div>
-<div>⚡ مشاكل سلوكية</div>
-<div>⏳ عدم انتظار الدور</div>
-<div>🧠 صعوبة في التسمية</div>
-<div>📚 صعوبة في الفهم والإدراك</div>
-<div>👁️ صعوبة في الأداء البصري</div>
-</div>
-</div>
-
-<!-- ليه تختارني -->
-<div class="card left">
-<h2>⭐ ليه تختارني؟</h2>
-<p>
-خبرة في تحليل السلوك التطبيقي (ABA)<br>
-عمل خطط تربوية فردية (IEP)<br>
-إعداد خطط التدخل السلوكي (BIP)<br>
-متابعة مستمرة مع الأسرة
-</p>
-</div>
-
-<!-- النتائج -->
-<div class="card right">
-<h2>📈 نتائج ملحوظة</h2>
-<div class="list">
-<div>✔ تحسن التواصل</div>
-<div>✔ تقليل السلوكيات</div>
-<div>✔ زيادة الانتباه</div>
-<div>✔ مهارات اجتماعية أفضل</div>
-<div>✔ تحسين نمط الأكل</div>
-</div>
-</div>
-
-<!-- الكورسات -->
-<div class="card left">
-<h2>📜 الكورسات</h2>
-<p>
-ABAT - QABA<br>
-IBT - IBAO<br>
-ABLLS-R<br>
-PECS<br>
-GARS-3
-</p>
-</div>
-
-<!-- تواصل -->
-<div class="card right" id="contact">
-<h2>📞 تواصل</h2>
-
-<div class="contact-btns">
-
-<a class="whatsapp"
-href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
-واتساب
-</a>
-
-<a class="call" href="tel:01010827183">اتصال</a>
-
-</div>
-
-</div>
-
-<!-- floating -->
-<a class="float"
-href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
-💬
-</a>
-
-<!-- popup -->
+<!-- زرار يظهر بعد 5 ثواني -->
 <a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
-class="popup-btn" id="popupBtn">
-🔥 احجز استشارة الآن
+class="popup-btn"
+id="popupBtn"
+onclick="playSound()">
+تواصل معي
 </a>
 
 <!-- صوت -->
-<audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+<audio id="clickSound" preload="auto">
+  <source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 
 function playSound(){
-  document.getElementById("clickSound").play();
+  let sound = document.getElementById("clickSound");
+
+  sound.currentTime = 0;
+  sound.play().catch(e => {});
 
   if (navigator.vibrate) {
     navigator.vibrate(100);
   }
 }
 
-const cards = document.querySelectorAll(".card");
-
-window.addEventListener("scroll", () => {
-
-  cards.forEach(card => {
-    let top = card.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      card.classList.add("show");
-    }
-  });
-
-  let popup = document.getElementById("popupBtn");
-
-  if (window.scrollY > 300) {
-    popup.classList.add("show");
-  }
-
-});
+/* يظهر بعد 5 ثواني */
+setTimeout(() => {
+  document.getElementById("popupBtn").classList.add("show");
+}, 5000);
 
 </script>
 

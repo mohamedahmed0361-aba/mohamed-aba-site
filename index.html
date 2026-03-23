@@ -7,7 +7,6 @@
 
 <style>
 
-/* ===== GENERAL ===== */
 body {
   margin: 0;
   font-family: Arial;
@@ -15,7 +14,7 @@ body {
   color: #fff;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
   position: relative;
   height: 100vh;
@@ -27,7 +26,6 @@ body {
   width: 100%;
   height: 120%;
   background: url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
-  z-index: 1;
 }
 
 .hero-overlay {
@@ -35,50 +33,41 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 40px 25px;
-  text-align: right;
   max-width: 320px;
 }
 
-/* الجملة فوق */
 .hero-top {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
-  color: #e2e8f0;
-  margin-bottom: 10px;
 }
 
-/* الاسم */
 .hero-content h1 {
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 1.4;
+  font-size: 36px;
+  margin-top: 10px;
 }
 
-/* 👇 هنا السحر */
 .hero-sub {
-  margin-top: 140px; /* نزلناه تحت جامد */
+  margin-top: auto;
+  margin-bottom: 120px;
   color: #22c55e;
-  font-size: 16px;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
-/* الشهادة */
 .degree {
-  font-size: 13px;
+  font-size: 14px;
   color: #cbd5f5;
 }
 
-/* زرار */
 .hero-btn {
   background: #22c55e;
   padding: 12px 20px;
@@ -86,18 +75,24 @@ body {
   color: black;
   text-decoration: none;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-/* ===== CARDS ===== */
+/* CARDS */
 .card {
   background: #1e293b;
   margin: 20px;
-  padding: 20px;
+  padding: 22px;
   border-radius: 15px;
-  text-align: right;
   opacity: 0;
   transition: 0.8s;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .card.right { transform: translateX(80px); }
@@ -108,7 +103,7 @@ body {
   transform: translateX(0);
 }
 
-/* ===== CONTACT ===== */
+/* CONTACT */
 .contact-btns {
   display: flex;
   gap: 10px;
@@ -127,7 +122,7 @@ body {
 .instagram { background: #e1306c; }
 .call { background: gray; }
 
-/* زر عائم */
+/* FLOAT */
 .float {
   position: fixed;
   bottom: 20px;
@@ -139,7 +134,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 </style>
@@ -147,7 +141,6 @@ body {
 
 <body>
 
-<!-- HERO -->
 <section class="hero">
 <div class="hero-bg"></div>
 <div class="hero-overlay"></div>
@@ -174,14 +167,14 @@ ASD Specialist | ABAT | IBT <br>
 <div class="card right">
 <h2>❗ هل طفلك يعاني من:</h2>
 <p>
-👶 التواصل<br>
-🗣 الطلب<br>
-💬 التعبير<br>
-⚡ مشاكل سلوكية<br>
-⏳ عدم انتظار الدور<br>
-🧠 التسمية<br>
-📚 الفهم<br>
-👁 الأداء البصري
+التواصل<br>
+الطلب<br>
+التعبير عن احتياجاته<br>
+مشاكل سلوكية<br>
+عدم انتظار الدور<br>
+صعوبة في التسمية<br>
+صعوبة في الفهم والإدراك<br>
+صعوبة في الأداء البصري
 </p>
 </div>
 
@@ -189,22 +182,22 @@ ASD Specialist | ABAT | IBT <br>
 <div class="card left">
 <h2>⭐ ليه تختارني؟</h2>
 <p>
-🎯 خبرة ABA<br>
-📊 IEP<br>
-⚡ BIP<br>
-👨‍👩‍👧 متابعة مستمرة
+خبرة في تحليل السلوك التطبيقي (ABA)<br>
+عمل خطط تربوية فردية مناسبة لكل حالة (IEP)<br>
+إعداد خطط التدخل السلوكي (BIP)<br>
+متابعة مستمرة مع الأسرة
 </p>
 </div>
 
-<!-- كورسات -->
+<!-- الكورسات -->
 <div class="card right">
 <h2>📜 الكورسات</h2>
 <p>
-✔ ABAT<br>
-✔ IBT<br>
-✔ ABLLS-R<br>
-✔ PECS<br>
-✔ GARS-3
+فني تحليل سلوك تطبيقي (ABAT) معتمد من البورد الأمريكي (QABA)<br>
+معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
+خبرة في برنامج (ABLLS-R)<br>
+خبرة في نظام التواصل بتبادل الصور (PECS)<br>
+GARS-3 لتشخيص التوحد
 </p>
 </div>
 
@@ -213,35 +206,15 @@ ASD Specialist | ABAT | IBT <br>
 <h2>📞 تواصل</h2>
 
 <div class="contact-btns">
-
-<a class="whatsapp"
-href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة بخصوص طفلي">
-واتساب
-</a>
-
-<a class="facebook"
-href="https://www.facebook.com/share/17HR9zMUJ9/?mibextid=wwXIfr">
-فيسبوك
-</a>
-
-<a class="instagram"
-href="https://www.instagram.com/mohamed_ghareib6">
-انستجرام
-</a>
-
-<a class="call" href="tel:01010827183">
-اتصال
-</a>
-
+<a class="whatsapp" href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة بخصوص طفلي">واتساب</a>
+<a class="facebook" href="#">فيسبوك</a>
+<a class="instagram" href="#">انستجرام</a>
+<a class="call" href="tel:01010827183">اتصال</a>
 </div>
 
 </div>
 
-<!-- زر واتساب -->
-<a class="float"
-href="https://wa.me/201010827183?text=السلام عليكم ورحمة الله وبركاته%0Aاريد استشارة بخصوص طفلي">
-💬
-</a>
+<a class="float" href="https://wa.me/201010827183">💬</a>
 
 <script>
 const cards = document.querySelectorAll(".card");
@@ -249,7 +222,6 @@ const cards = document.querySelectorAll(".card");
 window.addEventListener("scroll", () => {
   cards.forEach(card => {
     let top = card.getBoundingClientRect().top;
-
     if(top < window.innerHeight - 100){
       card.classList.add("show");
     }

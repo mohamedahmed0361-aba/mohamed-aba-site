@@ -25,12 +25,11 @@ overflow-x:hidden;
 .hero{
 position:relative;
 min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:25px;
 overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:flex-start;
+padding:20px;
 }
 
 .hero::before{
@@ -38,44 +37,37 @@ content:"";
 position:absolute;
 inset:0;
 background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
-filter:brightness(.55);
+filter:brightness(.50);
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.55));
+background:rgba(0,0,0,.35);
 }
 
 .hero-content{
 position:relative;
 z-index:2;
+width:100%;
 max-width:900px;
-padding-top:30px;
-}
-
-.badge{
-display:inline-block;
-background:#16a34a;
-padding:10px 22px;
-border-radius:30px;
-font-size:16px;
-margin-bottom:25px;
+text-align:center;
+padding-top:35px;
 }
 
 .hero h1{
 font-size:48px;
 line-height:1.25;
-margin-bottom:18px;
+margin-bottom:22px;
 text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
 
 .hero p{
 font-size:22px;
-line-height:1.8;
-color:#f1f5f9;
-margin-bottom:30px;
+line-height:1.9;
+color:#f8fafc;
+margin-bottom:320px;
 text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
 
@@ -162,7 +154,7 @@ color:#fff;
 text-align:center;
 }
 
-/* floating */
+/* whatsapp floating */
 .floating{
 position:fixed;
 left:20px;
@@ -176,6 +168,14 @@ font-weight:bold;
 font-size:20px;
 z-index:999;
 box-shadow:0 10px 20px rgba(0,0,0,.35);
+opacity:0;
+transform:translateY(40px);
+transition:.6s;
+}
+
+.floating.show{
+opacity:1;
+transform:translateY(0);
 }
 
 /* footer */
@@ -190,26 +190,23 @@ font-size:14px;
 @media(max-width:768px){
 
 .hero{
-min-height:100vh;
-padding:18px;
+padding:16px;
 }
 
-.badge{
-font-size:14px;
-padding:9px 18px;
-margin-bottom:20px;
+.hero-content{
+padding-top:18px;
 }
 
 .hero h1{
 font-size:34px;
 line-height:1.35;
-margin-bottom:15px;
+margin-bottom:18px;
 }
 
 .hero p{
 font-size:18px;
 line-height:1.9;
-margin-bottom:25px;
+margin-bottom:260px;
 }
 
 .btn{
@@ -235,11 +232,10 @@ font-size:18px;
 
 <body>
 
-<!-- HERO -->
+<!-- الصفحة الأولى -->
 <section class="hero">
-<div class="hero-content">
 
-<div class="badge">جلسات تعديل سلوك وتنمية مهارات</div>
+<div class="hero-content">
 
 <h1>Mohamed Ahmed Ghareib</h1>
 
@@ -262,6 +258,7 @@ href="https://wa.me/201098961264?text=السلام عليكم اريد استش�
 </div>
 
 </div>
+
 </section>
 
 <!-- المشاكل -->
@@ -368,12 +365,15 @@ href="tel:+201098961264">
 © 2026 Mohamed Ahmed Ghareib
 </footer>
 
-<a class="floating"
+<!-- واتساب العائم -->
+<a id="floatingBtn" class="floating"
 href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
 💬 واتساب
 </a>
 
 <script>
+
+/* الكروت */
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{
@@ -384,6 +384,12 @@ card.classList.add("show");
 }
 });
 });
+
+/* ظهور زر واتساب بعد 10 ثواني */
+setTimeout(()=>{
+document.getElementById("floatingBtn").classList.add("show");
+},10000);
+
 </script>
 
 </body>

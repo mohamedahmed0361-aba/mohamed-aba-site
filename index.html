@@ -17,19 +17,19 @@ body{
 font-family:Arial,sans-serif;
 background:#0f172a;
 color:#fff;
-line-height:1.8;
 overflow-x:hidden;
+line-height:1.8;
 }
 
-/* HERO */
+/* الصفحة الأولى */
 .hero{
 position:relative;
 min-height:100vh;
-overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:flex-start;
 padding:20px;
+overflow:hidden;
 }
 
 .hero::before{
@@ -37,14 +37,14 @@ content:"";
 position:absolute;
 inset:0;
 background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
-filter:brightness(.50);
+filter:brightness(.45);
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.35);
+background:rgba(0,0,0,.25);
 }
 
 .hero-content{
@@ -59,51 +59,63 @@ padding-top:35px;
 .hero h1{
 font-size:48px;
 line-height:1.25;
-margin-bottom:22px;
-text-shadow:0 3px 10px rgba(0,0,0,.45);
+margin-bottom:520px;
+text-shadow:0 3px 10px rgba(0,0,0,.5);
 }
 
-.hero p{
+/* الكلام فوق الأزرار مباشرة */
+.hero-info{
+margin-bottom:12px;
+animation:fadeUp 1s ease;
+}
+
+.hero-info p{
 font-size:22px;
-line-height:1.9;
-color:#f8fafc;
-margin-bottom:320px;
+line-height:1.8;
+color:#fff;
 text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
 
+/* الأزرار */
 .hero-btns{
 display:flex;
-gap:14px;
 justify-content:center;
+gap:14px;
 flex-wrap:wrap;
 }
 
 .btn{
 padding:15px 28px;
-border-radius:14px;
+border-radius:16px;
 text-decoration:none;
 font-weight:bold;
+font-size:20px;
 transition:.3s;
 display:inline-block;
-font-size:20px;
+animation:floaty 3s ease-in-out infinite;
 }
 
 .btn-main{
 background:#16a34a;
 color:#fff;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
 }
 
 .btn-outline{
 border:2px solid #fff;
-color:#fff;
 background:rgba(255,255,255,.05);
+color:#fff;
+}
+
+.btn:nth-child(2){
+animation-delay:1s;
 }
 
 .btn:hover{
-transform:translateY(-3px);
+transform:translateY(-5px);
 }
 
-/* sections */
+/* الأقسام */
 section{
 padding:70px 20px;
 max-width:1100px;
@@ -149,12 +161,7 @@ line-height:2;
 color:#fff;
 }
 
-/* contact */
-.contact{
-text-align:center;
-}
-
-/* whatsapp floating */
+/* واتساب */
 .floating{
 position:fixed;
 left:20px;
@@ -176,9 +183,10 @@ transition:.6s;
 .floating.show{
 opacity:1;
 transform:translateY(0);
+animation:floaty 3s ease-in-out infinite;
 }
 
-/* footer */
+/* Footer */
 footer{
 text-align:center;
 padding:25px;
@@ -186,7 +194,25 @@ color:#94a3b8;
 font-size:14px;
 }
 
-/* mobile */
+/* حركة */
+@keyframes floaty{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* موبايل */
 @media(max-width:768px){
 
 .hero{
@@ -194,19 +220,17 @@ padding:16px;
 }
 
 .hero-content{
-padding-top:18px;
+padding-top:20px;
 }
 
 .hero h1{
 font-size:34px;
-line-height:1.35;
-margin-bottom:18px;
+margin-bottom:390px;
 }
 
-.hero p{
+.hero-info p{
 font-size:18px;
-line-height:1.9;
-margin-bottom:260px;
+line-height:1.8;
 }
 
 .btn{
@@ -239,10 +263,12 @@ font-size:18px;
 
 <h1>Mohamed Ahmed Ghareib</h1>
 
+<div class="hero-info">
 <p>
 ABA Specialist | IBT | ABAT <br>
 خبرة في التعامل مع أطفال اضطراب طيف التوحد
 </p>
+</div>
 
 <div class="hero-btns">
 
@@ -258,7 +284,6 @@ href="https://wa.me/201098961264?text=السلام عليكم اريد استش�
 </div>
 
 </div>
-
 </section>
 
 <!-- المشاكل -->
@@ -345,9 +370,11 @@ href="https://wa.me/201098961264?text=السلام عليكم اريد استش�
 </div>
 </section>
 
-<!-- تواصل -->
-<section class="contact">
+<!-- التواصل -->
+<section>
 <h2 class="title">ابدأ رحلة طفلك الآن</h2>
+
+<div class="hero-btns">
 
 <a class="btn btn-main"
 href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
@@ -359,13 +386,15 @@ href="tel:+201098961264">
 اتصال
 </a>
 
+</div>
+
 </section>
 
 <footer>
 © 2026 Mohamed Ahmed Ghareib
 </footer>
 
-<!-- واتساب العائم -->
+<!-- زر واتساب -->
 <a id="floatingBtn" class="floating"
 href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
 💬 واتساب
@@ -373,19 +402,19 @@ href="https://wa.me/201098961264?text=السلام عليكم اريد استش�
 
 <script>
 
-/* الكروت */
+/* ظهور الكروت */
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{
 cards.forEach(card=>{
 let top=card.getBoundingClientRect().top;
-if(top < window.innerHeight-80){
+if(top<window.innerHeight-80){
 card.classList.add("show");
 }
 });
 });
 
-/* ظهور زر واتساب بعد 10 ثواني */
+/* زر واتساب بعد 10 ثواني */
 setTimeout(()=>{
 document.getElementById("floatingBtn").classList.add("show");
 },10000);

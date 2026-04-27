@@ -6,7 +6,13 @@
 <title>Mohamed Ahmed Ghareib | ABA Specialist</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
 body{
 font-family:Arial,sans-serif;
 background:#0f172a;
@@ -15,6 +21,7 @@ line-height:1.8;
 overflow-x:hidden;
 }
 
+/* HERO */
 .hero{
 position:relative;
 min-height:100vh;
@@ -22,7 +29,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:30px;
+padding:25px;
 overflow:hidden;
 }
 
@@ -31,19 +38,21 @@ content:"";
 position:absolute;
 inset:0;
 background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
+filter:brightness(.55);
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(0,0,0,.60);
+background:linear-gradient(to bottom,rgba(0,0,0,.35),rgba(0,0,0,.55));
 }
 
 .hero-content{
 position:relative;
 z-index:2;
-max-width:850px;
+max-width:900px;
+padding-top:30px;
 }
 
 .badge{
@@ -52,18 +61,22 @@ background:#16a34a;
 padding:10px 22px;
 border-radius:30px;
 font-size:16px;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:15px;
+font-size:48px;
+line-height:1.25;
+margin-bottom:18px;
+text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
 
 .hero p{
-font-size:21px;
-color:#e2e8f0;
-margin-bottom:25px;
+font-size:22px;
+line-height:1.8;
+color:#f1f5f9;
+margin-bottom:30px;
+text-shadow:0 3px 10px rgba(0,0,0,.45);
 }
 
 .hero-btns{
@@ -74,13 +87,13 @@ flex-wrap:wrap;
 }
 
 .btn{
-padding:14px 24px;
+padding:15px 28px;
 border-radius:14px;
 text-decoration:none;
 font-weight:bold;
 transition:.3s;
 display:inline-block;
-font-size:18px;
+font-size:20px;
 }
 
 .btn-main{
@@ -91,8 +104,14 @@ color:#fff;
 .btn-outline{
 border:2px solid #fff;
 color:#fff;
+background:rgba(255,255,255,.05);
 }
 
+.btn:hover{
+transform:translateY(-3px);
+}
+
+/* sections */
 section{
 padding:70px 20px;
 max-width:1100px;
@@ -138,10 +157,12 @@ line-height:2;
 color:#fff;
 }
 
+/* contact */
 .contact{
 text-align:center;
 }
 
+/* floating */
 .floating{
 position:fixed;
 left:20px;
@@ -157,6 +178,7 @@ z-index:999;
 box-shadow:0 10px 20px rgba(0,0,0,.35);
 }
 
+/* footer */
 footer{
 text-align:center;
 padding:25px;
@@ -164,19 +186,56 @@ color:#94a3b8;
 font-size:14px;
 }
 
+/* mobile */
 @media(max-width:768px){
-.hero h1{font-size:30px;}
-.hero p{font-size:17px;}
-.title{font-size:26px;}
-.card h3{font-size:24px;}
-.card p{font-size:18px;}
-.btn{font-size:16px;}
+
+.hero{
+min-height:100vh;
+padding:18px;
+}
+
+.badge{
+font-size:14px;
+padding:9px 18px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:34px;
+line-height:1.35;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.9;
+margin-bottom:25px;
+}
+
+.btn{
+font-size:18px;
+padding:14px 22px;
+}
+
+.title{
+font-size:26px;
+}
+
+.card h3{
+font-size:24px;
+}
+
+.card p{
+font-size:18px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <section class="hero">
 <div class="hero-content">
 
@@ -192,7 +251,7 @@ ABA Specialist | IBT | ABAT <br>
 <div class="hero-btns">
 
 <a class="btn btn-main"
-href="https://wa.me/201098961264?text=السلام عليكم أريد الاستفسار عن جلسات لطفلي">
+href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
 استشرني الآن
 </a>
 
@@ -205,6 +264,7 @@ href="https://wa.me/201098961264?text=السلام عليكم أريد الاس�
 </div>
 </section>
 
+<!-- المشاكل -->
 <section>
 <h2 class="title">هل طفلك يواجه صعوبات في؟</h2>
 
@@ -233,6 +293,7 @@ href="https://wa.me/201098961264?text=السلام عليكم أريد الاس�
 </div>
 </section>
 
+<!-- الخدمات -->
 <section id="services">
 <h2 class="title">خدماتي</h2>
 
@@ -250,7 +311,9 @@ href="https://wa.me/201098961264?text=السلام عليكم أريد الاس�
 
 <div class="card">
 <h3>تنمية مهارات ما قبل الأكاديمي</h3>
-<p>التواصل البصري، الاستجابة السمعية، التسمية، الطلب، الأداء البصري، المهارات الحركية الدقيقة والكبرى.</p>
+<p>
+التواصل البصري، الاستجابة السمعية، التسمية، الطلب، الأداء البصري، المهارات الحركية الدقيقة والكبرى.
+</p>
 </div>
 
 <div class="card">
@@ -261,6 +324,7 @@ href="https://wa.me/201098961264?text=السلام عليكم أريد الاس�
 </div>
 </section>
 
+<!-- النتائج -->
 <section>
 <h2 class="title">نتائج متوقعة</h2>
 
@@ -284,11 +348,12 @@ href="https://wa.me/201098961264?text=السلام عليكم أريد الاس�
 </div>
 </section>
 
+<!-- تواصل -->
 <section class="contact">
 <h2 class="title">ابدأ رحلة طفلك الآن</h2>
 
 <a class="btn btn-main"
-href="https://wa.me/201098961264?text=السلام عليكم أريد حجز استشارة لطفلي">
+href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
 واتساب
 </a>
 
@@ -304,7 +369,7 @@ href="tel:+201098961264">
 </footer>
 
 <a class="floating"
-href="https://wa.me/201098961264?text=السلام عليكم أريد الاستفسار عن جلسات لطفلي">
+href="https://wa.me/201098961264?text=السلام عليكم اريد استشاره بخصوص طفلي">
 💬 واتساب
 </a>
 
@@ -314,7 +379,7 @@ let cards=document.querySelectorAll(".card");
 window.addEventListener("scroll",()=>{
 cards.forEach(card=>{
 let top=card.getBoundingClientRect().top;
-if(top<window.innerHeight-80){
+if(top < window.innerHeight-80){
 card.classList.add("show");
 }
 });

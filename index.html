@@ -2,74 +2,142 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohamed Ahmed Ghareib</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Mohamed Ahmed | ABA Specialist</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
 body{
-margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 background:#0f172a;
-color:white;
+color:#fff;
+line-height:1.8;
+overflow-x:hidden;
 }
 
-/* HERO */
+/* الخلفية */
 .hero{
 position:relative;
-height:100vh;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:30px;
+overflow:hidden;
 }
 
-.hero-bg{
+.hero::before{
+content:"";
 position:absolute;
-width:100%;
-height:100%;
+inset:0;
 background:url("https://raw.githubusercontent.com/mohamedahmed0361-aba/mohamed-aba-site/main/IMG_7694.png") center/cover no-repeat;
+transform:scale(1.05);
 }
 
-.hero-overlay{
+.hero::after{
+content:"";
 position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,.65),rgba(15,23,42,.95));
 }
 
 .hero-content{
 position:relative;
-height:100%;
+z-index:2;
+max-width:800px;
+animation:fadeUp 1.2s ease;
+}
+
+.badge{
+display:inline-block;
+background:#16a34a;
+padding:8px 18px;
+border-radius:30px;
+font-size:14px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:20px;
+color:#cbd5e1;
+margin-bottom:25px;
+}
+
+.hero-btns{
 display:flex;
-flex-direction:column;
-align-items:flex-end;
-justify-content:flex-start;
-padding:30px;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
-.hero-top{
-font-size:22px;
-margin-top:10px;
+.btn{
+padding:14px 24px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+display:inline-block;
 }
 
-.hero-content h1{
-font-size:30px;
-margin-top:15px;
+.btn-main{
+background:#16a34a;
+color:white;
 }
 
-/* 💀 تحت خالص */
-.hero-sub{
-margin-top:220px;
-color:#22c55e;
-font-size:18px;
+.btn-main:hover{
+transform:translateY(-3px);
+background:#15803d;
 }
 
-/* cards */
+.btn-outline{
+border:1px solid #fff;
+color:#fff;
+}
+
+.btn-outline:hover{
+background:#fff;
+color:#111;
+}
+
+/* سكاشن */
+section{
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+.title{
+font-size:32px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
 .card{
 background:#1e293b;
-margin:20px;
-padding:20px;
-border-radius:15px;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+transition:.4s;
 opacity:0;
 transform:translateY(40px);
-transition:0.7s;
 }
 
 .card.show{
@@ -77,195 +145,240 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* زرار */
-.popup-btn{
-position:fixed;
-bottom:-100px;
-right:20px;
-background:#16a34a;
-padding:16px 26px;
-border-radius:14px;
-color:white;
-font-weight:bold;
-text-decoration:none;
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#22c55e;
+font-size:22px;
+}
+
+.card p{
+color:#e2e8f0;
 font-size:16px;
+}
 
-box-shadow:0 0 10px rgba(22,163,74,0.5);
+/* تواصل */
+.contact{
+text-align:center;
+}
 
+.contact a{
+margin:8px;
+}
+
+/* زرار عائم */
+.floating{
+position:fixed;
+left:20px;
+bottom:25px;
+background:#25d366;
+color:#fff;
+padding:16px 22px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+z-index:999;
+animation:pulse 1.8s infinite;
+}
+
+/* Footer */
+footer{
+text-align:center;
+padding:25px;
+color:#94a3b8;
+font-size:14px;
+}
+
+/* Animation */
+@keyframes fadeUp{
+from{
 opacity:0;
-transition:0.6s;
+transform:translateY(40px);
 }
-
-.popup-btn.show{
-bottom:30px;
+to{
 opacity:1;
-animation:popUp 0.6s ease, pulse 1.5s infinite 0.6s;
+transform:translateY(0);
 }
-
-@keyframes popUp{
-0%{transform:scale(0.5) translateY(50px); opacity:0;}
-60%{transform:scale(1.1) translateY(-10px);}
-100%{transform:scale(1);}
 }
 
 @keyframes pulse{
 0%{transform:scale(1);}
-50%{transform:scale(1.05);}
+50%{transform:scale(1.06);}
 100%{transform:scale(1);}
 }
 
-/* تواصل */
-.contact-btns{
-display:flex;
-gap:10px;
-flex-wrap:wrap;
+/* موبايل */
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
 }
 
-.contact-btns a{
-padding:10px 15px;
-border-radius:10px;
-text-decoration:none;
-color:white;
+.hero p{
+font-size:17px;
 }
 
-.whatsapp{background:#25d366;}
-.call{background:#3b82f6;}
+.title{
+font-size:26px;
+}
 
+}
 </style>
 </head>
 
 <body>
 
+<!-- Hero -->
 <section class="hero">
-<div class="hero-bg"></div>
-<div class="hero-overlay"></div>
-
 <div class="hero-content">
 
-<div class="hero-top">
-ابدأ رحلة تطوير مهارات طفلك بثقة واحترافية
-</div>
+<div class="badge">جلسات تعديل سلوك وتنمية مهارات</div>
 
-<h1>Mohamed Ahmed Ghareib</h1>
+<h1>Mohamed Ahmed</h1>
 
-<p class="hero-sub">
-ASD Specialist | ABAT | IBT <br>
-B.Sc. Disability & Rehabilitation
+<p>
+ABA Specialist | IBT | ABAT <br>
+خبرة في التعامل مع أطفال اضطراب طيف التوحد وتنمية المهارات
 </p>
+
+<div class="hero-btns">
+
+<a class="btn btn-main"
+href="https://wa.me/201010827183?text=السلام عليكم، أريد الاستفسار عن جلسات لطفلي">
+احجز استشارة الآن
+</a>
+
+<a class="btn btn-outline" href="#services">
+خدماتي
+</a>
+
+</div>
 
 </div>
 </section>
 
 <!-- مشاكل -->
+<section>
+<h2 class="title">هل طفلك يواجه صعوبات في؟</h2>
+
+<div class="grid">
+
 <div class="card">
-<h2>❗ هل طفلك يعاني من صعوبات في:</h2>
-<p>
-التواصل<br>
-الطلب<br>
-التعبير عن احتياجاته<br>
-مشاكل سلوكية<br>
-عدم انتظار الدور<br>
-صعوبة في التسمية<br>
-صعوبة في الفهم والإدراك<br>
-صعوبة في الأداء البصري
-</p>
+<h3>التواصل</h3>
+<p>ضعف في الكلام أو التعبير عن الاحتياجات.</p>
 </div>
 
-<!-- ليه تختارني -->
 <div class="card">
-<h2>⭐ ليه تختارني؟</h2>
-<p>
-خبرة في تحليل السلوك التطبيقي (ABA)<br>
-عمل خطة تربية فردية (IEP)<br>
-عمل خطة التدخل السلوكي (BIP)<br>
-متابعة مستمرة مع الأسرة
-</p>
+<h3>السلوكيات</h3>
+<p>العناد، الصراخ، ضرب النفس، أو فرط الحركة.</p>
 </div>
 
-<!-- 💣 رجعنا النتائج -->
 <div class="card">
-<h2>📈 نتائج ملحوظة</h2>
-<p>
-تحسن ملحوظ في التواصل<br>
-تقليل السلوكيات المشكلة<br>
-زيادة التركيز والانتباه<br>
-تطوير المهارات الاجتماعية<br>
-تحسين نمطية تناول الطعام
-</p>
+<h3>الانتباه</h3>
+<p>تشتت وصعوبة في الجلوس والتركيز.</p>
 </div>
 
-<!-- الكورسات -->
 <div class="card">
-<h2>📜 الكورسات</h2>
-<p>
-فني تحليل سلوك تطبيقي معتمد من البورد الأمريكي (QABA)<br>
-معالج سلوك دولي (IBT) معتمد من البورد الدولي (IBAO)<br>
-برنامج (ABLLS-R)<br>
-نظام التواصل بتبادل الصور (PECS)<br>
-GARS-3 لتشخيص اضطراب طيف التوحد
-</p>
+<h3>المهارات الاجتماعية</h3>
+<p>ضعف اللعب، التفاعل، انتظار الدور.</p>
 </div>
+
+</div>
+</section>
+
+<!-- خدمات -->
+<section id="services">
+<h2 class="title">خدماتي</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>تقييم شامل</h3>
+<p>تحديد نقاط القوة والاحتياجات بدقة.</p>
+</div>
+
+<div class="card">
+<h3>خطة فردية</h3>
+<p>برنامج مناسب لحالة الطفل وأهداف الأسرة.</p>
+</div>
+
+<div class="card">
+<h3>جلسات تدريب</h3>
+<p>تنمية التواصل، الانتباه، التقليد، والاعتماد على النفس.</p>
+</div>
+
+<div class="card">
+<h3>متابعة الأسرة</h3>
+<p>إرشاد مستمر للأهل لتحقيق أفضل نتائج.</p>
+</div>
+
+</div>
+</section>
+
+<!-- نتائج -->
+<section>
+<h2 class="title">نتائج متوقعة</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>تحسن التواصل</h3>
+<p>زيادة الطلب والكلام والتفاعل.</p>
+</div>
+
+<div class="card">
+<h3>تقليل السلوكيات</h3>
+<p>خفض المشكلات السلوكية تدريجيًا.</p>
+</div>
+
+<div class="card">
+<h3>استقلالية أعلى</h3>
+<p>الاعتماد على النفس في المهارات اليومية.</p>
+</div>
+
+</div>
+</section>
 
 <!-- تواصل -->
-<div class="card">
-<h2>📞 تواصل</h2>
+<section class="contact">
+<h2 class="title">ابدأ رحلة طفلك الآن</h2>
 
-<div class="contact-btns">
-
-<a class="whatsapp"
-href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي.">
+<a class="btn btn-main"
+href="https://wa.me/201010827183?text=السلام عليكم، أريد حجز استشارة لطفلي">
 واتساب
 </a>
 
-<a class="call" href="tel:01010827183">
+<a class="btn btn-outline"
+href="tel:01010827183">
 اتصال
 </a>
 
-</div>
+</section>
 
-</div>
+<footer>
+© 2026 Mohamed Ahmed - All Rights Reserved
+</footer>
 
-<!-- زرار -->
-<a href="https://wa.me/201010827183?text=السلام%20عليكم%20ورحمة%20الله%20وبركاته%0Aمحتاج%20استشارة%20بخصوص%20طفلي."
-class="popup-btn"
-id="popupBtn"
-onclick="playSound()">
-تواصل معي
+<a class="floating"
+href="https://wa.me/201010827183?text=السلام عليكم، أريد الاستفسار عن جلسات لطفلي">
+💬 واتساب
 </a>
 
-<audio id="clickSound" preload="auto">
-<source src="https://www.soundjay.com/buttons/sounds/button-16.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-
-function playSound(){
-let sound=document.getElementById("clickSound");
-sound.currentTime=0;
-sound.play().catch(e=>{});
-
-if(navigator.vibrate){
-navigator.vibrate([100,50,100]);
-}
-}
-
-setTimeout(()=>{
-let btn=document.getElementById("popupBtn");
-btn.classList.add("show");
-playSound();
-},20000);
-
 let cards=document.querySelectorAll(".card");
 
 window.addEventListener("scroll",()=>{
 cards.forEach(card=>{
 let top=card.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
+if(top < window.innerHeight - 80){
 card.classList.add("show");
 }
 });
 });
-
 </script>
 
 </body>
